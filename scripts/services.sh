@@ -44,6 +44,8 @@ up() {
 down() {
   "$K/bin/kafka-server-stop.sh" >/dev/null 2>&1 || true
   [ -f "$D/cassandra.pid" ] && kill "$(cat "$D/cassandra.pid")" 2>/dev/null || true
+  pkill -f "$C/" 2>/dev/null || true              # the JVM itself (the pid file can point at the wrapper)
+  for i in $(seq 1 30); do (exec 3<>/dev/tcp/127.0.0.1/9042) 2>/dev/null || break; sleep 1; done
   echo "stopped"
 }
 
