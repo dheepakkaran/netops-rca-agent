@@ -1,7 +1,7 @@
 [project]
 name = "netops-rca-agent"
 version = "0.1.0"
-description = "Add your description here"
+description = "Kafka → Spark → Cassandra telemetry, PyTorch LSTM anomaly detection, Claude root-cause agent"
 requires-python = ">=3.12"
 dependencies = [
     "anthropic",
@@ -24,3 +24,7 @@ explicit = true
 
 [tool.uv.sources]
 torch = { index = "pytorch-cpu" }
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
