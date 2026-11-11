@@ -1,0 +1,65 @@
+{
+ "model": "claude-haiku-5-5",
+ "labels": {
+  "0": {
+   "id": 0,
+   "label": "SNMP trap forwarded to collector",
+   "kind": "noise"
+  },
+  "1": {
+   "id": 1,
+   "label": "Routine SSH login by automation user",
+   "kind": "noise"
+  },
+  "2": {
+   "id": 2,
+   "label": "Configuration saved by automation user",
+   "kind": "noise"
+  },
+  "3": {
+   "id": 3,
+   "label": "NTP clock synchronization completed",
+   "kind": "noise"
+  },
+  "4": {
+   "id": 4,
+   "label": "Elevated SLA probe latency warnings",
+   "kind": "symptom"
+  },
+  "5": {
+   "id": 5,
+   "label": "Uplink packet loss threshold exceeded",
+   "kind": "symptom"
+  },
+  "6": {
+   "id": 6,
+   "label": "BGP neighbor down, hold timer expired",
+   "kind": "symptom"
+  },
+  "7": {
+   "id": 7,
+   "label": "Interface counters reset",
+   "kind": "noise"
+  },
+  "8": {
+   "id": 8,
+   "label": "SLA probe jitter informational",
+   "kind": "noise"
+  },
+  "9": {
+   "id": 9,
+   "label": "Interface link changed to down",
+   "kind": "symptom"
+  },
+  "10": {
+   "id": 10,
+   "label": "Routing process CPU hog detected",
+   "kind": "symptom"
+  },
+  "11": {
+   "id": 11,
+   "label": "BGP neighbor session re-established",
+   "kind": "symptom"
+  }
+ }
+}

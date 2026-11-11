@@ -1,0 +1,986 @@
+{"step": 3, "router": "agg-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 4, "router": "agg-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.1.210.252", "fault": null}
+{"step": 6, "router": "acc-10", "msg": "%SNMP-6-INFO: trap sent to collector 10.176.196.176", "fault": null}
+{"step": 7, "router": "acc-01", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 9, "router": "acc-09", "msg": "%NTP-6-SYNC: clock synchronized to 10.9.58.123", "fault": null}
+{"step": 11, "router": "acc-12", "msg": "%NTP-6-SYNC: clock synchronized to 10.162.251.75", "fault": null}
+{"step": 12, "router": "acc-03", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 14, "router": "acc-19", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 16, "router": "agg-6", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 19, "router": "agg-1", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 20, "router": "acc-03", "msg": "%SNMP-6-INFO: trap sent to collector 10.231.79.38", "fault": null}
+{"step": 21, "router": "acc-18", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 27, "router": "agg-2", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 29, "router": "acc-12", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 30, "router": "acc-06", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 34, "router": "agg-5", "msg": "%NTP-6-SYNC: clock synchronized to 10.109.236.11", "fault": null}
+{"step": 36, "router": "agg-3", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 38, "router": "agg-7", "msg": "%SNMP-6-INFO: trap sent to collector 10.214.28.70", "fault": null}
+{"step": 45, "router": "acc-16", "msg": "%SNMP-6-INFO: trap sent to collector 10.92.5.229", "fault": null}
+{"step": 47, "router": "acc-02", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 51, "router": "acc-01", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 53, "router": "acc-02", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 54, "router": "agg-7", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 57, "router": "acc-16", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 58, "router": "agg-6", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 62, "router": "acc-08", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 62, "router": "acc-20", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 69, "router": "acc-01", "msg": "%SNMP-6-INFO: trap sent to collector 10.91.244.89", "fault": null}
+{"step": 71, "router": "agg-6", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 77, "router": "acc-17", "msg": "%NTP-6-SYNC: clock synchronized to 10.146.254.38", "fault": null}
+{"step": 79, "router": "acc-20", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 82, "router": "acc-01", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 85, "router": "acc-09", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 88, "router": "acc-08", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 90, "router": "acc-04", "msg": "%NTP-6-SYNC: clock synchronized to 10.80.104.84", "fault": null}
+{"step": 91, "router": "core-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.14.90.248", "fault": null}
+{"step": 92, "router": "acc-05", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 93, "router": "agg-4", "msg": "%SNMP-6-INFO: trap sent to collector 10.251.36.233", "fault": null}
+{"step": 96, "router": "agg-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 97, "router": "acc-13", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 98, "router": "agg-5", "msg": "%SNMP-6-INFO: trap sent to collector 10.221.49.86", "fault": null}
+{"step": 103, "router": "acc-15", "msg": "%NTP-6-SYNC: clock synchronized to 10.136.238.23", "fault": null}
+{"step": 106, "router": "agg-5", "msg": "%NTP-6-SYNC: clock synchronized to 10.214.132.51", "fault": null}
+{"step": 108, "router": "acc-05", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 109, "router": "agg-5", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 110, "router": "agg-3", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 112, "router": "agg-6", "msg": "%SNMP-6-INFO: trap sent to collector 10.200.231.191", "fault": null}
+{"step": 121, "router": "acc-18", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 124, "router": "agg-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.44.49.149", "fault": null}
+{"step": 128, "router": "acc-05", "msg": "%NTP-6-SYNC: clock synchronized to 10.94.97.96", "fault": null}
+{"step": 137, "router": "acc-03", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 139, "router": "acc-19", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 141, "router": "acc-06", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 142, "router": "acc-02", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 145, "router": "acc-09", "msg": "%NTP-6-SYNC: clock synchronized to 10.62.177.81", "fault": null}
+{"step": 155, "router": "acc-11", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 157, "router": "acc-17", "msg": "%NTP-6-SYNC: clock synchronized to 10.100.195.8", "fault": null}
+{"step": 158, "router": "acc-04", "msg": "%NTP-6-SYNC: clock synchronized to 10.190.57.204", "fault": null}
+{"step": 164, "router": "acc-01", "msg": "%SNMP-6-INFO: trap sent to collector 10.77.215.2", "fault": null}
+{"step": 164, "router": "agg-4", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 166, "router": "acc-17", "msg": "%NTP-6-SYNC: clock synchronized to 10.175.109.193", "fault": null}
+{"step": 170, "router": "acc-18", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 171, "router": "acc-04", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 171, "router": "agg-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.40.96.20", "fault": null}
+{"step": 178, "router": "agg-1", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 180, "router": "agg-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.231.79.147", "fault": null}
+{"step": 181, "router": "acc-07", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 182, "router": "agg-7", "msg": "%SNMP-6-INFO: trap sent to collector 10.131.23.132", "fault": null}
+{"step": 186, "router": "agg-3", "msg": "%SNMP-6-INFO: trap sent to collector 10.66.192.117", "fault": null}
+{"step": 189, "router": "agg-5", "msg": "%NTP-6-SYNC: clock synchronized to 10.143.195.232", "fault": null}
+{"step": 190, "router": "agg-3", "msg": "%SNMP-6-INFO: trap sent to collector 10.159.82.229", "fault": null}
+{"step": 191, "router": "agg-6", "msg": "%SNMP-6-INFO: trap sent to collector 10.127.241.192", "fault": null}
+{"step": 194, "router": "acc-13", "msg": "%NTP-6-SYNC: clock synchronized to 10.188.84.28", "fault": null}
+{"step": 194, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 194, "router": "agg-2", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 197, "router": "acc-12", "msg": "%NTP-6-SYNC: clock synchronized to 10.102.206.59", "fault": null}
+{"step": 201, "router": "acc-20", "msg": "%NTP-6-SYNC: clock synchronized to 10.35.65.16", "fault": null}
+{"step": 206, "router": "acc-04", "msg": "%SNMP-6-INFO: trap sent to collector 10.25.212.117", "fault": null}
+{"step": 207, "router": "acc-13", "msg": "%NTP-6-SYNC: clock synchronized to 10.253.217.104", "fault": null}
+{"step": 208, "router": "acc-20", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 211, "router": "acc-06", "msg": "%SNMP-6-INFO: trap sent to collector 10.150.67.154", "fault": null}
+{"step": 211, "router": "acc-16", "msg": "%SNMP-6-INFO: trap sent to collector 10.227.188.111", "fault": null}
+{"step": 212, "router": "acc-06", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 213, "router": "acc-17", "msg": "%SNMP-6-INFO: trap sent to collector 10.32.102.129", "fault": null}
+{"step": 216, "router": "agg-4", "msg": "%NTP-6-SYNC: clock synchronized to 10.126.12.217", "fault": null}
+{"step": 217, "router": "acc-17", "msg": "%NTP-6-SYNC: clock synchronized to 10.144.29.243", "fault": null}
+{"step": 221, "router": "acc-14", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 223, "router": "acc-14", "msg": "%NTP-6-SYNC: clock synchronized to 10.25.133.218", "fault": null}
+{"step": 223, "router": "acc-20", "msg": "%NTP-6-SYNC: clock synchronized to 10.16.64.110", "fault": null}
+{"step": 225, "router": "acc-02", "msg": "%NTP-6-SYNC: clock synchronized to 10.1.55.146", "fault": null}
+{"step": 230, "router": "acc-12", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 232, "router": "acc-18", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 249, "router": "acc-02", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 249, "router": "acc-11", "msg": "%SNMP-6-INFO: trap sent to collector 10.32.80.157", "fault": null}
+{"step": 256, "router": "acc-10", "msg": "%NTP-6-SYNC: clock synchronized to 10.152.176.13", "fault": null}
+{"step": 258, "router": "agg-7", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 259, "router": "acc-17", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 265, "router": "acc-08", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 265, "router": "acc-18", "msg": "%NTP-6-SYNC: clock synchronized to 10.13.133.87", "fault": null}
+{"step": 266, "router": "acc-14", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 270, "router": "agg-5", "msg": "%NTP-6-SYNC: clock synchronized to 10.84.246.9", "fault": null}
+{"step": 275, "router": "acc-04", "msg": "%NTP-6-SYNC: clock synchronized to 10.65.102.108", "fault": null}
+{"step": 284, "router": "agg-4", "msg": "%SNMP-6-INFO: trap sent to collector 10.41.126.188", "fault": null}
+{"step": 288, "router": "acc-05", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 290, "router": "acc-06", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 292, "router": "acc-02", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 294, "router": "acc-12", "msg": "%NTP-6-SYNC: clock synchronized to 10.240.178.239", "fault": null}
+{"step": 296, "router": "core-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 299, "router": "agg-1", "msg": "%SNMP-6-INFO: trap sent to collector 10.1.84.6", "fault": null}
+{"step": 304, "router": "acc-13", "msg": "%NTP-6-SYNC: clock synchronized to 10.129.65.41", "fault": null}
+{"step": 304, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 306, "router": "acc-13", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 306, "router": "acc-17", "msg": "%SNMP-6-INFO: trap sent to collector 10.22.115.208", "fault": null}
+{"step": 310, "router": "acc-19", "msg": "%SNMP-6-INFO: trap sent to collector 10.226.154.198", "fault": null}
+{"step": 314, "router": "acc-20", "msg": "%SNMP-6-INFO: trap sent to collector 10.54.130.41", "fault": null}
+{"step": 316, "router": "acc-14", "msg": "%NTP-6-SYNC: clock synchronized to 10.195.223.10", "fault": null}
+{"step": 319, "router": "acc-09", "msg": "%SNMP-6-INFO: trap sent to collector 10.75.98.23", "fault": null}
+{"step": 325, "router": "core-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.96.82.119", "fault": null}
+{"step": 326, "router": "acc-02", "msg": "%SNMP-6-INFO: trap sent to collector 10.21.168.39", "fault": null}
+{"step": 328, "router": "acc-20", "msg": "%NTP-6-SYNC: clock synchronized to 10.158.201.139", "fault": null}
+{"step": 329, "router": "agg-5", "msg": "%NTP-6-SYNC: clock synchronized to 10.211.191.185", "fault": null}
+{"step": 337, "router": "agg-4", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 341, "router": "agg-1", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 345, "router": "acc-07", "msg": "%NTP-6-SYNC: clock synchronized to 10.254.92.37", "fault": null}
+{"step": 352, "router": "acc-15", "msg": "%NTP-6-SYNC: clock synchronized to 10.239.41.82", "fault": null}
+{"step": 356, "router": "acc-09", "msg": "%NTP-6-SYNC: clock synchronized to 10.55.19.210", "fault": null}
+{"step": 357, "router": "acc-12", "msg": "%SNMP-6-INFO: trap sent to collector 10.94.147.252", "fault": null}
+{"step": 357, "router": "agg-7", "msg": "%SNMP-6-INFO: trap sent to collector 10.106.206.166", "fault": null}
+{"step": 358, "router": "acc-18", "msg": "%SNMP-6-INFO: trap sent to collector 10.145.13.28", "fault": null}
+{"step": 359, "router": "acc-01", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 360, "router": "acc-07", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 361, "router": "agg-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.41.188.17", "fault": null}
+{"step": 367, "router": "acc-03", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 373, "router": "acc-17", "msg": "%SNMP-6-INFO: trap sent to collector 10.153.123.81", "fault": null}
+{"step": 377, "router": "acc-02", "msg": "%NTP-6-SYNC: clock synchronized to 10.158.137.159", "fault": null}
+{"step": 377, "router": "acc-03", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 378, "router": "acc-17", "msg": "%SNMP-6-INFO: trap sent to collector 10.116.25.186", "fault": null}
+{"step": 381, "router": "acc-04", "msg": "%NTP-6-SYNC: clock synchronized to 10.27.102.249", "fault": null}
+{"step": 393, "router": "agg-5", "msg": "%NTP-6-SYNC: clock synchronized to 10.118.143.129", "fault": null}
+{"step": 395, "router": "acc-06", "msg": "%SNMP-6-INFO: trap sent to collector 10.190.59.13", "fault": null}
+{"step": 396, "router": "acc-03", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 397, "router": "acc-02", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 397, "router": "agg-8", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 398, "router": "acc-12", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 404, "router": "acc-13", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 405, "router": "acc-10", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 409, "router": "acc-11", "msg": "%SNMP-6-INFO: trap sent to collector 10.136.248.200", "fault": null}
+{"step": 416, "router": "agg-4", "msg": "%SNMP-6-INFO: trap sent to collector 10.236.245.12", "fault": null}
+{"step": 418, "router": "agg-3", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 422, "router": "acc-08", "msg": "%NTP-6-SYNC: clock synchronized to 10.216.73.198", "fault": null}
+{"step": 430, "router": "acc-06", "msg": "%SNMP-6-INFO: trap sent to collector 10.176.136.103", "fault": null}
+{"step": 435, "router": "core-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.212.170.76", "fault": null}
+{"step": 438, "router": "core-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.163.31.90", "fault": null}
+{"step": 441, "router": "acc-08", "msg": "%NTP-6-SYNC: clock synchronized to 10.173.109.235", "fault": null}
+{"step": 441, "router": "agg-1", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 443, "router": "acc-03", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 443, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 444, "router": "agg-6", "msg": "%NTP-6-SYNC: clock synchronized to 10.88.94.168", "fault": null}
+{"step": 446, "router": "acc-02", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 446, "router": "agg-6", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 448, "router": "acc-19", "msg": "%SNMP-6-INFO: trap sent to collector 10.170.21.197", "fault": null}
+{"step": 448, "router": "agg-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.177.91.92", "fault": null}
+{"step": 448, "router": "agg-3", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 450, "router": "acc-18", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 454, "router": "acc-10", "msg": "%NTP-6-SYNC: clock synchronized to 10.182.9.144", "fault": null}
+{"step": 455, "router": "acc-03", "msg": "%SNMP-6-INFO: trap sent to collector 10.79.44.147", "fault": null}
+{"step": 455, "router": "agg-3", "msg": "%NTP-6-SYNC: clock synchronized to 10.188.185.67", "fault": null}
+{"step": 456, "router": "acc-03", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 456, "router": "acc-05", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 457, "router": "agg-8", "msg": "%NTP-6-SYNC: clock synchronized to 10.224.127.237", "fault": null}
+{"step": 461, "router": "acc-17", "msg": "%NTP-6-SYNC: clock synchronized to 10.204.253.195", "fault": null}
+{"step": 462, "router": "acc-04", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 462, "router": "acc-14", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 465, "router": "agg-3", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 467, "router": "acc-16", "msg": "%SNMP-6-INFO: trap sent to collector 10.230.251.132", "fault": null}
+{"step": 469, "router": "acc-19", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 471, "router": "acc-05", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 474, "router": "acc-02", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 474, "router": "acc-15", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 476, "router": "acc-02", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 476, "router": "acc-16", "msg": "%SNMP-6-INFO: trap sent to collector 10.75.174.176", "fault": null}
+{"step": 477, "router": "acc-19", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 479, "router": "acc-14", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 480, "router": "acc-10", "msg": "%NTP-6-SYNC: clock synchronized to 10.47.108.241", "fault": null}
+{"step": 481, "router": "acc-18", "msg": "%NTP-6-SYNC: clock synchronized to 10.45.234.83", "fault": null}
+{"step": 484, "router": "acc-15", "msg": "%SNMP-6-INFO: trap sent to collector 10.87.191.180", "fault": null}
+{"step": 484, "router": "acc-18", "msg": "%NTP-6-SYNC: clock synchronized to 10.194.243.65", "fault": null}
+{"step": 484, "router": "core-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.64.6.203", "fault": null}
+{"step": 485, "router": "acc-02", "msg": "%NTP-6-SYNC: clock synchronized to 10.245.95.20", "fault": null}
+{"step": 488, "router": "acc-08", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 490, "router": "acc-04", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 490, "router": "acc-13", "msg": "%NTP-6-SYNC: clock synchronized to 10.65.142.204", "fault": null}
+{"step": 491, "router": "agg-6", "msg": "%SNMP-6-INFO: trap sent to collector 10.18.108.213", "fault": null}
+{"step": 500, "router": "agg-6", "msg": "%NTP-6-SYNC: clock synchronized to 10.140.211.173", "fault": null}
+{"step": 503, "router": "acc-13", "msg": "%NTP-6-SYNC: clock synchronized to 10.14.156.213", "fault": null}
+{"step": 504, "router": "acc-07", "msg": "%NTP-6-SYNC: clock synchronized to 10.174.223.14", "fault": null}
+{"step": 507, "router": "agg-3", "msg": "%NTP-6-SYNC: clock synchronized to 10.53.6.33", "fault": null}
+{"step": 508, "router": "acc-18", "msg": "%NTP-6-SYNC: clock synchronized to 10.221.130.33", "fault": null}
+{"step": 511, "router": "acc-09", "msg": "%NTP-6-SYNC: clock synchronized to 10.9.64.131", "fault": null}
+{"step": 511, "router": "agg-5", "msg": "%SNMP-6-INFO: trap sent to collector 10.24.91.138", "fault": null}
+{"step": 512, "router": "acc-05", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 513, "router": "acc-06", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 514, "router": "agg-7", "msg": "%SNMP-6-INFO: trap sent to collector 10.76.127.57", "fault": null}
+{"step": 514, "router": "agg-8", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 516, "router": "acc-18", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 516, "router": "agg-4", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 521, "router": "acc-01", "msg": "%SNMP-6-INFO: trap sent to collector 10.190.118.220", "fault": null}
+{"step": 522, "router": "agg-8", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 525, "router": "acc-14", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 526, "router": "agg-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.29.175.19", "fault": null}
+{"step": 530, "router": "acc-01", "msg": "%SNMP-6-INFO: trap sent to collector 10.39.204.11", "fault": null}
+{"step": 531, "router": "acc-12", "msg": "%SNMP-6-INFO: trap sent to collector 10.129.131.95", "fault": null}
+{"step": 532, "router": "acc-19", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 534, "router": "acc-16", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 535, "router": "agg-1", "msg": "%SNMP-6-INFO: trap sent to collector 10.230.234.59", "fault": null}
+{"step": 536, "router": "agg-3", "msg": "%NTP-6-SYNC: clock synchronized to 10.37.105.179", "fault": null}
+{"step": 537, "router": "acc-13", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 540, "router": "acc-17", "msg": "%NTP-6-SYNC: clock synchronized to 10.196.250.104", "fault": null}
+{"step": 540, "router": "acc-20", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 542, "router": "acc-05", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 542, "router": "agg-8", "msg": "%NTP-6-SYNC: clock synchronized to 10.33.13.245", "fault": null}
+{"step": 544, "router": "agg-2", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 545, "router": "acc-08", "msg": "%SNMP-6-INFO: trap sent to collector 10.188.103.71", "fault": null}
+{"step": 547, "router": "core-2", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 549, "router": "acc-11", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 553, "router": "acc-20", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 562, "router": "acc-08", "msg": "%SNMP-6-INFO: trap sent to collector 10.49.192.116", "fault": null}
+{"step": 563, "router": "acc-11", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 566, "router": "core-2", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 568, "router": "acc-07", "msg": "%SNMP-6-INFO: trap sent to collector 10.31.92.56", "fault": null}
+{"step": 568, "router": "agg-6", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 571, "router": "acc-08", "msg": "%SNMP-6-INFO: trap sent to collector 10.16.89.175", "fault": null}
+{"step": 572, "router": "acc-04", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 573, "router": "acc-19", "msg": "%NTP-6-SYNC: clock synchronized to 10.62.102.6", "fault": null}
+{"step": 573, "router": "agg-5", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 576, "router": "agg-3", "msg": "%NTP-6-SYNC: clock synchronized to 10.247.35.137", "fault": null}
+{"step": 581, "router": "agg-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.244.128.164", "fault": null}
+{"step": 583, "router": "agg-5", "msg": "%SNMP-6-INFO: trap sent to collector 10.98.88.122", "fault": null}
+{"step": 588, "router": "agg-4", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 589, "router": "agg-5", "msg": "%SNMP-6-INFO: trap sent to collector 10.185.150.30", "fault": null}
+{"step": 591, "router": "acc-02", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 591, "router": "acc-20", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 593, "router": "core-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.245.230.183", "fault": null}
+{"step": 594, "router": "acc-06", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 599, "router": "acc-20", "msg": "%NTP-6-SYNC: clock synchronized to 10.216.29.23", "fault": null}
+{"step": 600, "router": "acc-02", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 602, "router": "acc-18", "msg": "%NTP-6-SYNC: clock synchronized to 10.13.95.35", "fault": null}
+{"step": 602, "router": "agg-5", "msg": "%SNMP-6-INFO: trap sent to collector 10.46.195.62", "fault": null}
+{"step": 603, "router": "agg-1", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 606, "router": "acc-06", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 607, "router": "acc-16", "msg": "%NTP-6-SYNC: clock synchronized to 10.248.111.20", "fault": null}
+{"step": 609, "router": "acc-07", "msg": "%SNMP-6-INFO: trap sent to collector 10.238.147.35", "fault": null}
+{"step": 609, "router": "acc-10", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 611, "router": "acc-09", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 613, "router": "acc-08", "msg": "%NTP-6-SYNC: clock synchronized to 10.206.99.86", "fault": null}
+{"step": 614, "router": "agg-6", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 615, "router": "acc-18", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 618, "router": "agg-1", "msg": "%SNMP-6-INFO: trap sent to collector 10.47.205.182", "fault": null}
+{"step": 619, "router": "acc-02", "msg": "%NTP-6-SYNC: clock synchronized to 10.45.124.253", "fault": null}
+{"step": 621, "router": "agg-4", "msg": "%NTP-6-SYNC: clock synchronized to 10.106.115.14", "fault": null}
+{"step": 626, "router": "acc-17", "msg": "%SNMP-6-INFO: trap sent to collector 10.95.99.91", "fault": null}
+{"step": 629, "router": "acc-03", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 633, "router": "acc-01", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 634, "router": "acc-13", "msg": "%SNMP-6-INFO: trap sent to collector 10.112.65.120", "fault": null}
+{"step": 636, "router": "acc-14", "msg": "%NTP-6-SYNC: clock synchronized to 10.53.94.230", "fault": null}
+{"step": 640, "router": "acc-11", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 640, "router": "agg-5", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 642, "router": "acc-08", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 643, "router": "acc-02", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 645, "router": "acc-13", "msg": "%SNMP-6-INFO: trap sent to collector 10.88.50.7", "fault": null}
+{"step": 645, "router": "agg-6", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 648, "router": "agg-6", "msg": "%SNMP-6-INFO: trap sent to collector 10.148.16.117", "fault": null}
+{"step": 652, "router": "acc-14", "msg": "%NTP-6-SYNC: clock synchronized to 10.33.177.249", "fault": null}
+{"step": 652, "router": "acc-20", "msg": "%NTP-6-SYNC: clock synchronized to 10.0.46.147", "fault": null}
+{"step": 654, "router": "acc-02", "msg": "%SNMP-6-INFO: trap sent to collector 10.45.205.162", "fault": null}
+{"step": 658, "router": "acc-03", "msg": "%SNMP-6-INFO: trap sent to collector 10.118.173.63", "fault": null}
+{"step": 665, "router": "acc-16", "msg": "%SNMP-6-INFO: trap sent to collector 10.237.69.8", "fault": null}
+{"step": 667, "router": "acc-03", "msg": "%SNMP-6-INFO: trap sent to collector 10.160.86.91", "fault": null}
+{"step": 667, "router": "agg-6", "msg": "%SNMP-6-INFO: trap sent to collector 10.55.37.146", "fault": null}
+{"step": 669, "router": "acc-18", "msg": "%SNMP-6-INFO: trap sent to collector 10.114.249.194", "fault": null}
+{"step": 674, "router": "acc-07", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 674, "router": "acc-14", "msg": "%SNMP-6-INFO: trap sent to collector 10.130.54.236", "fault": null}
+{"step": 676, "router": "acc-15", "msg": "%SNMP-6-INFO: trap sent to collector 10.50.144.187", "fault": null}
+{"step": 677, "router": "acc-05", "msg": "%NTP-6-SYNC: clock synchronized to 10.157.193.252", "fault": null}
+{"step": 678, "router": "acc-03", "msg": "%SNMP-6-INFO: trap sent to collector 10.23.207.97", "fault": null}
+{"step": 678, "router": "acc-16", "msg": "%SNMP-6-INFO: trap sent to collector 10.176.13.178", "fault": null}
+{"step": 678, "router": "agg-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.113.121.3", "fault": null}
+{"step": 683, "router": "core-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.100.87.72", "fault": null}
+{"step": 687, "router": "acc-16", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 687, "router": "agg-6", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 688, "router": "acc-09", "msg": "%SNMP-6-INFO: trap sent to collector 10.19.66.229", "fault": null}
+{"step": 689, "router": "acc-06", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 692, "router": "acc-01", "msg": "%SNMP-6-INFO: trap sent to collector 10.164.234.187", "fault": null}
+{"step": 693, "router": "acc-14", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 694, "router": "acc-09", "msg": "%NTP-6-SYNC: clock synchronized to 10.240.125.149", "fault": null}
+{"step": 697, "router": "acc-04", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 698, "router": "acc-20", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 700, "router": "acc-14", "msg": "%NTP-6-SYNC: clock synchronized to 10.104.138.189", "fault": null}
+{"step": 702, "router": "acc-04", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 708, "router": "acc-16", "msg": "%NTP-6-SYNC: clock synchronized to 10.210.132.204", "fault": null}
+{"step": 709, "router": "agg-2", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 712, "router": "acc-15", "msg": "%NTP-6-SYNC: clock synchronized to 10.142.235.128", "fault": null}
+{"step": 713, "router": "acc-15", "msg": "%NTP-6-SYNC: clock synchronized to 10.126.1.192", "fault": null}
+{"step": 716, "router": "acc-13", "msg": "%NTP-6-SYNC: clock synchronized to 10.245.136.245", "fault": null}
+{"step": 720, "router": "agg-3", "msg": "%SNMP-6-INFO: trap sent to collector 10.185.217.161", "fault": null}
+{"step": 721, "router": "acc-11", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 721, "router": "agg-6", "msg": "%NTP-6-SYNC: clock synchronized to 10.82.239.210", "fault": null}
+{"step": 723, "router": "acc-04", "msg": "%SNMP-6-INFO: trap sent to collector 10.215.245.148", "fault": null}
+{"step": 725, "router": "acc-12", "msg": "%SNMP-6-INFO: trap sent to collector 10.36.162.228", "fault": null}
+{"step": 725, "router": "acc-18", "msg": "%SNMP-6-INFO: trap sent to collector 10.219.237.81", "fault": null}
+{"step": 733, "router": "acc-02", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 734, "router": "acc-04", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 734, "router": "acc-07", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 735, "router": "acc-14", "msg": "%NTP-6-SYNC: clock synchronized to 10.21.111.167", "fault": null}
+{"step": 735, "router": "agg-1", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 735, "router": "agg-5", "msg": "%SNMP-6-INFO: trap sent to collector 10.24.115.221", "fault": null}
+{"step": 736, "router": "acc-03", "msg": "%NTP-6-SYNC: clock synchronized to 10.214.219.245", "fault": null}
+{"step": 738, "router": "acc-05", "msg": "%NTP-6-SYNC: clock synchronized to 10.170.42.88", "fault": null}
+{"step": 738, "router": "acc-09", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 743, "router": "agg-8", "msg": "%NTP-6-SYNC: clock synchronized to 10.217.175.253", "fault": null}
+{"step": 744, "router": "acc-09", "msg": "%NTP-6-SYNC: clock synchronized to 10.128.78.85", "fault": null}
+{"step": 745, "router": "acc-02", "msg": "%SNMP-6-INFO: trap sent to collector 10.143.197.57", "fault": null}
+{"step": 755, "router": "agg-4", "msg": "%NTP-6-SYNC: clock synchronized to 10.50.74.6", "fault": null}
+{"step": 756, "router": "agg-5", "msg": "%SNMP-6-INFO: trap sent to collector 10.135.22.98", "fault": null}
+{"step": 757, "router": "acc-10", "msg": "%SNMP-6-INFO: trap sent to collector 10.91.45.105", "fault": null}
+{"step": 757, "router": "agg-8", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 760, "router": "agg-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.37.39.239", "fault": null}
+{"step": 761, "router": "acc-06", "msg": "%NTP-6-SYNC: clock synchronized to 10.222.12.154", "fault": null}
+{"step": 764, "router": "acc-01", "msg": "%NTP-6-SYNC: clock synchronized to 10.37.254.49", "fault": null}
+{"step": 766, "router": "acc-13", "msg": "%SNMP-6-INFO: trap sent to collector 10.219.155.127", "fault": null}
+{"step": 766, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 768, "router": "acc-04", "msg": "%SNMP-6-INFO: trap sent to collector 10.23.113.44", "fault": null}
+{"step": 771, "router": "acc-08", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 772, "router": "acc-19", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 773, "router": "core-1", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 776, "router": "acc-02", "msg": "%NTP-6-SYNC: clock synchronized to 10.6.106.223", "fault": null}
+{"step": 777, "router": "acc-13", "msg": "%NTP-6-SYNC: clock synchronized to 10.104.160.100", "fault": null}
+{"step": 781, "router": "agg-3", "msg": "%PING-4-SLA: probe to core-1 latency 8 ms", "fault": "F01"}
+{"step": 782, "router": "acc-01", "msg": "%PING-4-SLA: probe to agg-1 latency 6 ms", "fault": "F01"}
+{"step": 782, "router": "acc-03", "msg": "%PING-4-SLA: probe to agg-3 latency 8 ms", "fault": "F01"}
+{"step": 782, "router": "acc-17", "msg": "%PING-4-SLA: probe to agg-1 latency 8 ms", "fault": "F01"}
+{"step": 782, "router": "core-1", "msg": "%SYS-4-CPUHOG: process routing-daemon used 97% CPU for 42 s", "fault": "F01"}
+{"step": 783, "router": "acc-15", "msg": "%PING-4-SLA: probe to agg-7 latency 6 ms", "fault": "F01"}
+{"step": 783, "router": "acc-19", "msg": "%PING-4-SLA: probe to agg-3 latency 6 ms", "fault": "F01"}
+{"step": 783, "router": "agg-1", "msg": "%PING-4-SLA: probe to core-1 latency 8 ms", "fault": "F01"}
+{"step": 783, "router": "agg-5", "msg": "%SNMP-6-INFO: trap sent to collector 10.242.212.199", "fault": null}
+{"step": 784, "router": "acc-09", "msg": "%PING-4-SLA: probe to agg-1 latency 6 ms", "fault": "F01"}
+{"step": 784, "router": "acc-11", "msg": "%PING-4-SLA: probe to agg-3 latency 6 ms", "fault": "F01"}
+{"step": 784, "router": "acc-13", "msg": "%PING-4-SLA: probe to agg-5 latency 5 ms", "fault": "F01"}
+{"step": 784, "router": "agg-4", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 784, "router": "agg-5", "msg": "%PING-4-SLA: probe to core-1 latency 7 ms", "fault": "F01"}
+{"step": 784, "router": "agg-7", "msg": "%PING-4-SLA: probe to core-1 latency 5 ms", "fault": "F01"}
+{"step": 785, "router": "acc-05", "msg": "%PING-4-SLA: probe to agg-5 latency 6 ms", "fault": "F01"}
+{"step": 785, "router": "acc-07", "msg": "%PING-4-SLA: probe to agg-7 latency 7 ms", "fault": "F01"}
+{"step": 786, "router": "acc-11", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 790, "router": "acc-17", "msg": "%NTP-6-SYNC: clock synchronized to 10.82.222.192", "fault": null}
+{"step": 796, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 802, "router": "core-2", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 803, "router": "core-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.18.215.168", "fault": null}
+{"step": 806, "router": "acc-20", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 806, "router": "agg-7", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 812, "router": "acc-07", "msg": "%NTP-6-SYNC: clock synchronized to 10.97.61.246", "fault": null}
+{"step": 812, "router": "acc-15", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 817, "router": "agg-7", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 819, "router": "agg-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 819, "router": "agg-6", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 822, "router": "acc-09", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 824, "router": "acc-03", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 828, "router": "acc-11", "msg": "%SNMP-6-INFO: trap sent to collector 10.95.21.142", "fault": null}
+{"step": 834, "router": "acc-10", "msg": "%SNMP-6-INFO: trap sent to collector 10.175.231.19", "fault": null}
+{"step": 845, "router": "acc-11", "msg": "%NTP-6-SYNC: clock synchronized to 10.122.191.230", "fault": null}
+{"step": 847, "router": "acc-04", "msg": "%SNMP-6-INFO: trap sent to collector 10.152.127.139", "fault": null}
+{"step": 848, "router": "core-2", "msg": "%SNMP-6-INFO: interface counters reset", "fault": null}
+{"step": 849, "router": "agg-5", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 849, "router": "core-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.241.161.34", "fault": null}
+{"step": 850, "router": "acc-16", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 851, "router": "acc-15", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 852, "router": "agg-1", "msg": "%SNMP-6-INFO: trap sent to collector 10.98.35.175", "fault": null}
+{"step": 862, "router": "acc-16", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 863, "router": "acc-14", "msg": "%SNMP-6-INFO: trap sent to collector 10.74.229.83", "fault": null}
+{"step": 868, "router": "acc-09", "msg": "%SNMP-6-INFO: trap sent to collector 10.93.92.124", "fault": null}
+{"step": 873, "router": "core-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.202.40.128", "fault": null}
+{"step": 876, "router": "acc-07", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 878, "router": "acc-13", "msg": "%SNMP-6-INFO: trap sent to collector 10.64.48.1", "fault": null}
+{"step": 878, "router": "acc-17", "msg": "%NTP-6-SYNC: clock synchronized to 10.48.104.115", "fault": null}
+{"step": 880, "router": "agg-4", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 881, "router": "agg-3", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 884, "router": "acc-14", "msg": "%NTP-6-SYNC: clock synchronized to 10.75.122.205", "fault": null}
+{"step": 884, "router": "agg-6", "msg": "%NTP-6-SYNC: clock synchronized to 10.24.126.100", "fault": null}
+{"step": 886, "router": "acc-20", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 887, "router": "acc-01", "msg": "%NTP-6-SYNC: clock synchronized to 10.26.69.221", "fault": null}
+{"step": 887, "router": "agg-4", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 888, "router": "acc-05", "msg": "%NTP-6-SYNC: clock synchronized to 10.217.60.74", "fault": null}
+{"step": 888, "router": "agg-8", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 890, "router": "agg-5", "msg": "%NTP-6-SYNC: clock synchronized to 10.154.43.197", "fault": null}
+{"step": 895, "router": "agg-4", "msg": "%SNMP-6-INFO: trap sent to collector 10.238.102.49", "fault": null}
+{"step": 898, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 907, "router": "acc-07", "msg": "%PING-4-SLA: probe to agg-7 latency 5 ms", "fault": "F02"}
+{"step": 907, "router": "acc-15", "msg": "%PING-4-SLA: probe to agg-7 latency 6 ms", "fault": "F02"}
+{"step": 908, "router": "agg-7", "msg": "%SYS-4-CPUHOG: process routing-daemon used 97% CPU for 47 s", "fault": "F02"}
+{"step": 909, "router": "acc-07", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 909, "router": "acc-13", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 910, "router": "acc-19", "msg": "%SNMP-6-INFO: trap sent to collector 10.69.117.188", "fault": null}
+{"step": 912, "router": "acc-10", "msg": "%NTP-6-SYNC: clock synchronized to 10.18.224.149", "fault": null}
+{"step": 924, "router": "acc-09", "msg": "%NTP-6-SYNC: clock synchronized to 10.86.28.82", "fault": null}
+{"step": 931, "router": "acc-01", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 931, "router": "acc-06", "msg": "%NTP-6-SYNC: clock synchronized to 10.253.3.10", "fault": null}
+{"step": 932, "router": "acc-05", "msg": "%NTP-6-SYNC: clock synchronized to 10.47.141.32", "fault": null}
+{"step": 933, "router": "acc-17", "msg": "%SNMP-6-INFO: trap sent to collector 10.82.141.147", "fault": null}
+{"step": 935, "router": "acc-17", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 937, "router": "acc-06", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 937, "router": "acc-17", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 943, "router": "acc-08", "msg": "%SNMP-6-INFO: trap sent to collector 10.140.134.75", "fault": null}
+{"step": 949, "router": "acc-13", "msg": "%NTP-6-SYNC: clock synchronized to 10.135.103.202", "fault": null}
+{"step": 952, "router": "acc-05", "msg": "%SNMP-6-INFO: trap sent to collector 10.174.89.219", "fault": null}
+{"step": 962, "router": "agg-7", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 967, "router": "acc-05", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 970, "router": "core-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.17.138.55", "fault": null}
+{"step": 972, "router": "agg-8", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 975, "router": "acc-19", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 980, "router": "acc-09", "msg": "%NTP-6-SYNC: clock synchronized to 10.241.187.9", "fault": null}
+{"step": 982, "router": "acc-12", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 982, "router": "acc-20", "msg": "%SNMP-6-INFO: trap sent to collector 10.41.225.230", "fault": null}
+{"step": 985, "router": "agg-7", "msg": "%SNMP-6-INFO: trap sent to collector 10.223.99.144", "fault": null}
+{"step": 989, "router": "core-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.147.67.98", "fault": null}
+{"step": 994, "router": "core-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 999, "router": "acc-08", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1004, "router": "acc-20", "msg": "%SNMP-6-INFO: trap sent to collector 10.217.233.170", "fault": null}
+{"step": 1013, "router": "acc-14", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1014, "router": "acc-16", "msg": "%NTP-6-SYNC: clock synchronized to 10.87.68.32", "fault": null}
+{"step": 1015, "router": "agg-8", "msg": "%NTP-6-SYNC: clock synchronized to 10.233.217.64", "fault": null}
+{"step": 1016, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1020, "router": "acc-03", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1020, "router": "acc-12", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1020, "router": "acc-19", "msg": "%QOS-4-DROP: uplink packet loss 11% exceeds threshold", "fault": "F03"}
+{"step": 1021, "router": "acc-11", "msg": "%QOS-4-DROP: uplink packet loss 17% exceeds threshold", "fault": "F03"}
+{"step": 1021, "router": "acc-17", "msg": "%QOS-4-DROP: uplink packet loss 17% exceeds threshold", "fault": "F03"}
+{"step": 1021, "router": "core-1", "msg": "%BGP-5-ADJCHANGE: neighbor 10.254.209.31 Up", "fault": "F03"}
+{"step": 1022, "router": "acc-01", "msg": "%NTP-6-SYNC: clock synchronized to 10.66.107.128", "fault": null}
+{"step": 1022, "router": "acc-05", "msg": "%QOS-4-DROP: uplink packet loss 19% exceeds threshold", "fault": "F03"}
+{"step": 1022, "router": "acc-15", "msg": "%QOS-4-DROP: uplink packet loss 18% exceeds threshold", "fault": "F03"}
+{"step": 1022, "router": "agg-1", "msg": "%QOS-4-DROP: uplink packet loss 18% exceeds threshold", "fault": "F03"}
+{"step": 1022, "router": "agg-3", "msg": "%QOS-4-DROP: uplink packet loss 18% exceeds threshold", "fault": "F03"}
+{"step": 1022, "router": "core-1", "msg": "%BGP-5-ADJCHANGE: neighbor 10.207.81.113 Down - hold timer expired", "fault": "F03"}
+{"step": 1023, "router": "acc-01", "msg": "%QOS-4-DROP: uplink packet loss 15% exceeds threshold", "fault": "F03"}
+{"step": 1023, "router": "acc-03", "msg": "%QOS-4-DROP: uplink packet loss 11% exceeds threshold", "fault": "F03"}
+{"step": 1023, "router": "acc-09", "msg": "%QOS-4-DROP: uplink packet loss 17% exceeds threshold", "fault": "F03"}
+{"step": 1023, "router": "agg-5", "msg": "%QOS-4-DROP: uplink packet loss 12% exceeds threshold", "fault": "F03"}
+{"step": 1023, "router": "agg-7", "msg": "%QOS-4-DROP: uplink packet loss 8% exceeds threshold", "fault": "F03"}
+{"step": 1024, "router": "acc-07", "msg": "%QOS-4-DROP: uplink packet loss 13% exceeds threshold", "fault": "F03"}
+{"step": 1024, "router": "acc-13", "msg": "%QOS-4-DROP: uplink packet loss 9% exceeds threshold", "fault": "F03"}
+{"step": 1026, "router": "agg-7", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1032, "router": "acc-11", "msg": "%SNMP-6-INFO: trap sent to collector 10.23.228.231", "fault": null}
+{"step": 1032, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1034, "router": "acc-16", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1037, "router": "acc-18", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1037, "router": "agg-4", "msg": "%SNMP-6-INFO: trap sent to collector 10.46.36.242", "fault": null}
+{"step": 1039, "router": "acc-02", "msg": "%SNMP-6-INFO: trap sent to collector 10.188.186.236", "fault": null}
+{"step": 1043, "router": "core-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1046, "router": "acc-15", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1047, "router": "agg-7", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1051, "router": "acc-10", "msg": "%SNMP-6-INFO: trap sent to collector 10.183.93.71", "fault": null}
+{"step": 1053, "router": "agg-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.206.181.104", "fault": null}
+{"step": 1055, "router": "acc-07", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1055, "router": "core-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.210.236.225", "fault": null}
+{"step": 1057, "router": "acc-17", "msg": "%NTP-6-SYNC: clock synchronized to 10.188.27.226", "fault": null}
+{"step": 1060, "router": "acc-06", "msg": "%SNMP-6-INFO: trap sent to collector 10.162.165.100", "fault": null}
+{"step": 1060, "router": "acc-17", "msg": "%NTP-6-SYNC: clock synchronized to 10.43.73.85", "fault": null}
+{"step": 1061, "router": "acc-03", "msg": "%SNMP-6-INFO: trap sent to collector 10.240.79.185", "fault": null}
+{"step": 1062, "router": "acc-11", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1066, "router": "core-2", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1077, "router": "core-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1080, "router": "agg-7", "msg": "%NTP-6-SYNC: clock synchronized to 10.52.111.185", "fault": null}
+{"step": 1087, "router": "agg-2", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1088, "router": "acc-07", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1088, "router": "agg-8", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1089, "router": "acc-09", "msg": "%NTP-6-SYNC: clock synchronized to 10.103.243.123", "fault": null}
+{"step": 1091, "router": "acc-05", "msg": "%PING-6-SLA: probe jitter 2 ms", "fault": null}
+{"step": 1091, "router": "acc-12", "msg": "%NTP-6-SYNC: clock synchronized to 10.3.52.63", "fault": null}
+{"step": 1094, "router": "acc-07", "msg": "%SNMP-6-INFO: trap sent to collector 10.134.86.95", "fault": null}
+{"step": 1094, "router": "acc-19", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1104, "router": "acc-03", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1105, "router": "agg-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1112, "router": "acc-01", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1117, "router": "acc-10", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1118, "router": "acc-15", "msg": "%SNMP-6-INFO: trap sent to collector 10.154.68.95", "fault": null}
+{"step": 1120, "router": "acc-17", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1122, "router": "acc-06", "msg": "%SNMP-6-INFO: trap sent to collector 10.94.21.18", "fault": null}
+{"step": 1123, "router": "acc-16", "msg": "%SNMP-6-INFO: trap sent to collector 10.213.38.60", "fault": null}
+{"step": 1123, "router": "core-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.207.65.153", "fault": null}
+{"step": 1124, "router": "agg-8", "msg": "%SNMP-6-INFO: trap sent to collector 10.233.204.1", "fault": null}
+{"step": 1127, "router": "acc-01", "msg": "%QOS-4-DROP: uplink packet loss 25% exceeds threshold", "fault": "F04"}
+{"step": 1128, "router": "acc-09", "msg": "%QOS-4-DROP: uplink packet loss 29% exceeds threshold", "fault": "F04"}
+{"step": 1128, "router": "acc-17", "msg": "%QOS-4-DROP: uplink packet loss 25% exceeds threshold", "fault": "F04"}
+{"step": 1128, "router": "agg-1", "msg": "%LINK-3-UPDOWN: Interface ge-0/0/3 to core-1, changed state to down", "fault": "F04"}
+{"step": 1129, "router": "acc-01", "msg": "%PING-4-SLA: probe to agg-1 latency 14 ms", "fault": "F04"}
+{"step": 1129, "router": "acc-17", "msg": "%PING-4-SLA: probe to agg-1 latency 10 ms", "fault": "F04"}
+{"step": 1130, "router": "acc-09", "msg": "%PING-4-SLA: probe to agg-1 latency 11 ms", "fault": "F04"}
+{"step": 1133, "router": "acc-08", "msg": "%NTP-6-SYNC: clock synchronized to 10.97.97.74", "fault": null}
+{"step": 1137, "router": "acc-19", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1141, "router": "acc-03", "msg": "%SNMP-6-INFO: trap sent to collector 10.219.31.38", "fault": null}
+{"step": 1141, "router": "acc-09", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1143, "router": "acc-11", "msg": "%NTP-6-SYNC: clock synchronized to 10.118.208.13", "fault": null}
+{"step": 1144, "router": "agg-5", "msg": "%NTP-6-SYNC: clock synchronized to 10.81.86.195", "fault": null}
+{"step": 1144, "router": "core-1", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1145, "router": "acc-09", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1145, "router": "acc-19", "msg": "%SNMP-6-INFO: trap sent to collector 10.118.48.95", "fault": null}
+{"step": 1146, "router": "acc-02", "msg": "%NTP-6-SYNC: clock synchronized to 10.109.41.226", "fault": null}
+{"step": 1149, "router": "acc-01", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1151, "router": "acc-04", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1154, "router": "acc-05", "msg": "%SNMP-6-INFO: trap sent to collector 10.245.62.100", "fault": null}
+{"step": 1155, "router": "acc-04", "msg": "%SNMP-6-INFO: trap sent to collector 10.157.172.180", "fault": null}
+{"step": 1155, "router": "agg-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.159.173.168", "fault": null}
+{"step": 1156, "router": "acc-06", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1159, "router": "acc-13", "msg": "%SNMP-6-INFO: trap sent to collector 10.149.68.98", "fault": null}
+{"step": 1159, "router": "agg-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1166, "router": "core-1", "msg": "%SNMP-6-INFO: trap sent to collector 10.198.121.198", "fault": null}
+{"step": 1168, "router": "acc-01", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1169, "router": "agg-7", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1169, "router": "core-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.235.57.250", "fault": null}
+{"step": 1170, "router": "acc-07", "msg": "%SNMP-6-INFO: trap sent to collector 10.117.94.141", "fault": null}
+{"step": 1170, "router": "agg-8", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1172, "router": "acc-08", "msg": "%NTP-6-SYNC: clock synchronized to 10.245.117.118", "fault": null}
+{"step": 1173, "router": "agg-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.45.162.106", "fault": null}
+{"step": 1174, "router": "acc-14", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1176, "router": "acc-19", "msg": "%NTP-6-SYNC: clock synchronized to 10.219.240.134", "fault": null}
+{"step": 1177, "router": "acc-14", "msg": "%SNMP-6-INFO: trap sent to collector 10.213.62.228", "fault": null}
+{"step": 1178, "router": "acc-04", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1180, "router": "acc-09", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1183, "router": "acc-14", "msg": "%SNMP-6-INFO: trap sent to collector 10.214.28.118", "fault": null}
+{"step": 1184, "router": "acc-01", "msg": "%NTP-6-SYNC: clock synchronized to 10.197.171.216", "fault": null}
+{"step": 1185, "router": "core-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1186, "router": "agg-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.13.81.183", "fault": null}
+{"step": 1190, "router": "acc-19", "msg": "%SNMP-6-INFO: trap sent to collector 10.96.85.155", "fault": null}
+{"step": 1195, "router": "agg-3", "msg": "%NTP-6-SYNC: clock synchronized to 10.103.171.221", "fault": null}
+{"step": 1197, "router": "acc-02", "msg": "%NTP-6-SYNC: clock synchronized to 10.208.54.218", "fault": null}
+{"step": 1198, "router": "agg-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.118.6.136", "fault": null}
+{"step": 1203, "router": "agg-5", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1204, "router": "acc-14", "msg": "%NTP-6-SYNC: clock synchronized to 10.109.202.248", "fault": null}
+{"step": 1206, "router": "agg-3", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1207, "router": "acc-11", "msg": "%NTP-6-SYNC: clock synchronized to 10.231.198.194", "fault": null}
+{"step": 1213, "router": "agg-1", "msg": "%SNMP-6-INFO: trap sent to collector 10.60.35.170", "fault": null}
+{"step": 1215, "router": "acc-03", "msg": "%SNMP-6-INFO: trap sent to collector 10.129.243.181", "fault": null}
+{"step": 1221, "router": "acc-20", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1221, "router": "acc-20", "msg": "%NTP-6-SYNC: clock synchronized to 10.7.158.63", "fault": null}
+{"step": 1221, "router": "agg-5", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1224, "router": "acc-06", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1225, "router": "acc-05", "msg": "%NTP-6-SYNC: clock synchronized to 10.152.55.4", "fault": null}
+{"step": 1227, "router": "acc-10", "msg": "%NTP-6-SYNC: clock synchronized to 10.41.11.136", "fault": null}
+{"step": 1232, "router": "core-1", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1233, "router": "acc-15", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1236, "router": "acc-02", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1238, "router": "acc-17", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1239, "router": "core-1", "msg": "%SNMP-6-INFO: trap sent to collector 10.82.215.37", "fault": null}
+{"step": 1245, "router": "acc-05", "msg": "%LINK-3-UPDOWN: Interface ge-0/0/2 to agg-5, changed state to down", "fault": "F05"}
+{"step": 1245, "router": "acc-07", "msg": "%SNMP-6-INFO: trap sent to collector 10.200.72.96", "fault": null}
+{"step": 1249, "router": "core-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.242.177.238", "fault": null}
+{"step": 1256, "router": "acc-02", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1257, "router": "acc-16", "msg": "%SNMP-6-INFO: trap sent to collector 10.159.39.235", "fault": null}
+{"step": 1258, "router": "acc-18", "msg": "%SNMP-6-INFO: trap sent to collector 10.53.228.96", "fault": null}
+{"step": 1265, "router": "acc-06", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1265, "router": "acc-20", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1266, "router": "acc-19", "msg": "%SNMP-6-INFO: trap sent to collector 10.76.33.174", "fault": null}
+{"step": 1267, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1269, "router": "acc-13", "msg": "%SNMP-6-INFO: trap sent to collector 10.181.191.76", "fault": null}
+{"step": 1270, "router": "acc-03", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1271, "router": "agg-5", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1273, "router": "agg-1", "msg": "%SNMP-6-INFO: trap sent to collector 10.169.189.231", "fault": null}
+{"step": 1277, "router": "agg-8", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1279, "router": "acc-05", "msg": "%SNMP-6-INFO: trap sent to collector 10.134.33.38", "fault": null}
+{"step": 1279, "router": "agg-8", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1280, "router": "acc-02", "msg": "%SNMP-6-INFO: trap sent to collector 10.84.42.148", "fault": null}
+{"step": 1282, "router": "acc-13", "msg": "%NTP-6-SYNC: clock synchronized to 10.8.250.229", "fault": null}
+{"step": 1283, "router": "acc-01", "msg": "%SNMP-6-INFO: trap sent to collector 10.100.67.37", "fault": null}
+{"step": 1286, "router": "acc-18", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1286, "router": "acc-19", "msg": "%NTP-6-SYNC: clock synchronized to 10.168.105.95", "fault": null}
+{"step": 1288, "router": "acc-01", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1293, "router": "acc-14", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1295, "router": "acc-02", "msg": "%SNMP-6-INFO: interface counters reset", "fault": null}
+{"step": 1296, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1298, "router": "agg-6", "msg": "%SNMP-6-INFO: trap sent to collector 10.36.56.146", "fault": null}
+{"step": 1299, "router": "acc-15", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1300, "router": "acc-09", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1301, "router": "agg-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.39.95.136", "fault": null}
+{"step": 1303, "router": "acc-17", "msg": "%SNMP-6-INFO: trap sent to collector 10.40.192.122", "fault": null}
+{"step": 1304, "router": "acc-04", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1307, "router": "acc-09", "msg": "%SNMP-6-INFO: trap sent to collector 10.23.97.172", "fault": null}
+{"step": 1308, "router": "acc-01", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1308, "router": "core-2", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1309, "router": "agg-6", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1311, "router": "acc-15", "msg": "%NTP-6-SYNC: clock synchronized to 10.199.136.132", "fault": null}
+{"step": 1316, "router": "agg-5", "msg": "%SNMP-6-INFO: trap sent to collector 10.124.119.190", "fault": null}
+{"step": 1320, "router": "agg-7", "msg": "%SNMP-6-INFO: trap sent to collector 10.28.17.184", "fault": null}
+{"step": 1321, "router": "agg-5", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1325, "router": "core-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.83.74.79", "fault": null}
+{"step": 1328, "router": "acc-03", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1329, "router": "acc-09", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1330, "router": "acc-16", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1332, "router": "acc-16", "msg": "%SNMP-6-INFO: trap sent to collector 10.25.79.214", "fault": null}
+{"step": 1332, "router": "acc-18", "msg": "%NTP-6-SYNC: clock synchronized to 10.8.43.239", "fault": null}
+{"step": 1337, "router": "acc-16", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1337, "router": "agg-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.46.158.158", "fault": null}
+{"step": 1338, "router": "agg-6", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1340, "router": "acc-09", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1343, "router": "agg-3", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1345, "router": "acc-05", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1349, "router": "acc-13", "msg": "%LINK-3-UPDOWN: Interface ge-0/0/1 to agg-5, changed state to down", "fault": "F06"}
+{"step": 1352, "router": "acc-16", "msg": "%SNMP-6-INFO: trap sent to collector 10.172.221.202", "fault": null}
+{"step": 1354, "router": "acc-06", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1354, "router": "agg-4", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1356, "router": "acc-15", "msg": "%SNMP-6-INFO: trap sent to collector 10.130.141.220", "fault": null}
+{"step": 1359, "router": "acc-05", "msg": "%NTP-6-SYNC: clock synchronized to 10.184.32.185", "fault": null}
+{"step": 1364, "router": "acc-18", "msg": "%NTP-6-SYNC: clock synchronized to 10.166.227.196", "fault": null}
+{"step": 1365, "router": "acc-16", "msg": "%NTP-6-SYNC: clock synchronized to 10.30.139.220", "fault": null}
+{"step": 1366, "router": "acc-20", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1368, "router": "acc-15", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1371, "router": "agg-3", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1371, "router": "core-1", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1373, "router": "acc-03", "msg": "%NTP-6-SYNC: clock synchronized to 10.107.201.183", "fault": null}
+{"step": 1376, "router": "acc-08", "msg": "%NTP-6-SYNC: clock synchronized to 10.32.149.164", "fault": null}
+{"step": 1378, "router": "acc-20", "msg": "%SNMP-6-INFO: trap sent to collector 10.106.232.96", "fault": null}
+{"step": 1378, "router": "agg-7", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1384, "router": "acc-13", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1391, "router": "agg-6", "msg": "%SNMP-6-INFO: trap sent to collector 10.1.116.2", "fault": null}
+{"step": 1392, "router": "acc-09", "msg": "%NTP-6-SYNC: clock synchronized to 10.5.163.176", "fault": null}
+{"step": 1392, "router": "acc-12", "msg": "%NTP-6-SYNC: clock synchronized to 10.45.171.131", "fault": null}
+{"step": 1393, "router": "acc-14", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1393, "router": "agg-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.162.132.186", "fault": null}
+{"step": 1393, "router": "core-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.12.21.204", "fault": null}
+{"step": 1394, "router": "agg-7", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1395, "router": "acc-19", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1395, "router": "core-1", "msg": "%SNMP-6-INFO: trap sent to collector 10.25.223.86", "fault": null}
+{"step": 1398, "router": "acc-18", "msg": "%NTP-6-SYNC: clock synchronized to 10.22.112.34", "fault": null}
+{"step": 1403, "router": "agg-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.193.83.153", "fault": null}
+{"step": 1409, "router": "acc-07", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1416, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1422, "router": "agg-2", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1424, "router": "acc-15", "msg": "%SNMP-6-INFO: trap sent to collector 10.244.102.214", "fault": null}
+{"step": 1426, "router": "acc-03", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1428, "router": "agg-4", "msg": "%SNMP-6-INFO: trap sent to collector 10.75.62.12", "fault": null}
+{"step": 1436, "router": "agg-6", "msg": "%SNMP-6-INFO: trap sent to collector 10.191.11.225", "fault": null}
+{"step": 1439, "router": "acc-18", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1440, "router": "acc-09", "msg": "%NTP-6-SYNC: clock synchronized to 10.242.132.199", "fault": null}
+{"step": 1443, "router": "acc-18", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1446, "router": "acc-09", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1447, "router": "acc-18", "msg": "%NTP-6-SYNC: clock synchronized to 10.57.190.37", "fault": null}
+{"step": 1448, "router": "acc-01", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1454, "router": "acc-19", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1456, "router": "agg-7", "msg": "%NTP-6-SYNC: clock synchronized to 10.169.70.232", "fault": null}
+{"step": 1458, "router": "acc-07", "msg": "%NTP-6-SYNC: clock synchronized to 10.112.101.89", "fault": null}
+{"step": 1459, "router": "acc-10", "msg": "%QOS-4-DROP: uplink packet loss 12% exceeds threshold", "fault": "F07"}
+{"step": 1460, "router": "acc-02", "msg": "%QOS-4-DROP: uplink packet loss 9% exceeds threshold", "fault": "F07"}
+{"step": 1460, "router": "acc-03", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1460, "router": "acc-05", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1461, "router": "acc-18", "msg": "%QOS-4-DROP: uplink packet loss 19% exceeds threshold", "fault": "F07"}
+{"step": 1462, "router": "agg-2", "msg": "%BGP-5-ADJCHANGE: neighbor 10.143.160.127 Down - hold timer expired", "fault": "F07"}
+{"step": 1462, "router": "agg-2", "msg": "%BGP-5-ADJCHANGE: neighbor 10.10.125.42 Up", "fault": "F07"}
+{"step": 1471, "router": "agg-2", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1472, "router": "acc-07", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1473, "router": "acc-13", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1475, "router": "agg-3", "msg": "%SNMP-6-INFO: trap sent to collector 10.112.29.186", "fault": null}
+{"step": 1475, "router": "agg-6", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1476, "router": "agg-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.54.194.120", "fault": null}
+{"step": 1479, "router": "acc-05", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1482, "router": "agg-8", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1484, "router": "acc-17", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1485, "router": "acc-14", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1485, "router": "core-1", "msg": "%SNMP-6-INFO: trap sent to collector 10.222.12.230", "fault": null}
+{"step": 1485, "router": "core-2", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1490, "router": "acc-08", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1491, "router": "acc-09", "msg": "%SNMP-6-INFO: trap sent to collector 10.206.75.178", "fault": null}
+{"step": 1491, "router": "core-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.71.106.106", "fault": null}
+{"step": 1494, "router": "acc-14", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1494, "router": "agg-3", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1494, "router": "agg-4", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1495, "router": "acc-08", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1495, "router": "core-2", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1496, "router": "acc-12", "msg": "%NTP-6-SYNC: clock synchronized to 10.91.80.87", "fault": null}
+{"step": 1497, "router": "acc-16", "msg": "%SNMP-6-INFO: trap sent to collector 10.66.66.75", "fault": null}
+{"step": 1498, "router": "core-2", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1505, "router": "agg-6", "msg": "%SNMP-6-INFO: trap sent to collector 10.4.99.159", "fault": null}
+{"step": 1508, "router": "agg-8", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1509, "router": "acc-12", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1511, "router": "core-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.198.12.88", "fault": null}
+{"step": 1515, "router": "agg-8", "msg": "%NTP-6-SYNC: clock synchronized to 10.1.7.253", "fault": null}
+{"step": 1518, "router": "acc-11", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1518, "router": "agg-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.186.106.86", "fault": null}
+{"step": 1520, "router": "acc-11", "msg": "%NTP-6-SYNC: clock synchronized to 10.192.135.180", "fault": null}
+{"step": 1523, "router": "agg-2", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1524, "router": "acc-16", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1526, "router": "agg-5", "msg": "%NTP-6-SYNC: clock synchronized to 10.206.154.99", "fault": null}
+{"step": 1527, "router": "acc-06", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1527, "router": "acc-16", "msg": "%PING-6-SLA: probe jitter 4 ms", "fault": null}
+{"step": 1534, "router": "acc-18", "msg": "%NTP-6-SYNC: clock synchronized to 10.245.0.129", "fault": null}
+{"step": 1538, "router": "acc-15", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1538, "router": "acc-20", "msg": "%SNMP-6-INFO: trap sent to collector 10.236.249.208", "fault": null}
+{"step": 1541, "router": "acc-19", "msg": "%NTP-6-SYNC: clock synchronized to 10.192.5.191", "fault": null}
+{"step": 1542, "router": "core-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.48.30.163", "fault": null}
+{"step": 1544, "router": "acc-06", "msg": "%SNMP-6-INFO: trap sent to collector 10.171.191.96", "fault": null}
+{"step": 1550, "router": "agg-7", "msg": "%SNMP-6-INFO: trap sent to collector 10.96.246.37", "fault": null}
+{"step": 1551, "router": "acc-09", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1551, "router": "acc-14", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1551, "router": "acc-14", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1551, "router": "agg-3", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1552, "router": "acc-17", "msg": "%SNMP-6-INFO: trap sent to collector 10.28.248.15", "fault": null}
+{"step": 1553, "router": "agg-5", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1554, "router": "agg-3", "msg": "%NTP-6-SYNC: clock synchronized to 10.167.173.169", "fault": null}
+{"step": 1554, "router": "agg-4", "msg": "%NTP-6-SYNC: clock synchronized to 10.246.15.129", "fault": null}
+{"step": 1557, "router": "acc-07", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1564, "router": "agg-5", "msg": "%SNMP-6-INFO: trap sent to collector 10.125.64.134", "fault": null}
+{"step": 1565, "router": "acc-03", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1565, "router": "agg-3", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1568, "router": "agg-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.45.214.118", "fault": null}
+{"step": 1575, "router": "acc-07", "msg": "%NTP-6-SYNC: clock synchronized to 10.77.230.104", "fault": null}
+{"step": 1578, "router": "acc-04", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1578, "router": "acc-07", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1579, "router": "acc-18", "msg": "%SNMP-6-INFO: trap sent to collector 10.86.206.78", "fault": null}
+{"step": 1580, "router": "acc-18", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1581, "router": "acc-02", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1581, "router": "agg-7", "msg": "%SNMP-6-INFO: trap sent to collector 10.75.115.15", "fault": null}
+{"step": 1581, "router": "core-2", "msg": "%SYS-4-CPUHOG: process routing-daemon used 97% CPU for 21 s", "fault": "F08"}
+{"step": 1582, "router": "acc-18", "msg": "%PING-4-SLA: probe to agg-2 latency 8 ms", "fault": "F08"}
+{"step": 1582, "router": "agg-4", "msg": "%PING-4-SLA: probe to core-2 latency 5 ms", "fault": "F08"}
+{"step": 1583, "router": "acc-06", "msg": "%PING-4-SLA: probe to agg-6 latency 6 ms", "fault": "F08"}
+{"step": 1583, "router": "acc-12", "msg": "%PING-4-SLA: probe to agg-4 latency 7 ms", "fault": "F08"}
+{"step": 1583, "router": "acc-20", "msg": "%PING-4-SLA: probe to agg-4 latency 8 ms", "fault": "F08"}
+{"step": 1583, "router": "agg-8", "msg": "%PING-4-SLA: probe to core-2 latency 7 ms", "fault": "F08"}
+{"step": 1584, "router": "acc-02", "msg": "%PING-4-SLA: probe to agg-2 latency 7 ms", "fault": "F08"}
+{"step": 1584, "router": "acc-04", "msg": "%PING-4-SLA: probe to agg-4 latency 8 ms", "fault": "F08"}
+{"step": 1584, "router": "acc-08", "msg": "%PING-4-SLA: probe to agg-8 latency 5 ms", "fault": "F08"}
+{"step": 1584, "router": "acc-10", "msg": "%PING-4-SLA: probe to agg-2 latency 7 ms", "fault": "F08"}
+{"step": 1584, "router": "acc-14", "msg": "%PING-4-SLA: probe to agg-6 latency 8 ms", "fault": "F08"}
+{"step": 1584, "router": "acc-16", "msg": "%PING-4-SLA: probe to agg-8 latency 8 ms", "fault": "F08"}
+{"step": 1584, "router": "agg-2", "msg": "%PING-4-SLA: probe to core-2 latency 7 ms", "fault": "F08"}
+{"step": 1584, "router": "agg-5", "msg": "%NTP-6-SYNC: clock synchronized to 10.53.218.199", "fault": null}
+{"step": 1584, "router": "agg-6", "msg": "%PING-4-SLA: probe to core-2 latency 6 ms", "fault": "F08"}
+{"step": 1586, "router": "acc-18", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1590, "router": "acc-09", "msg": "%SNMP-6-INFO: trap sent to collector 10.239.105.170", "fault": null}
+{"step": 1590, "router": "acc-12", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1590, "router": "acc-15", "msg": "%SNMP-6-INFO: trap sent to collector 10.254.74.153", "fault": null}
+{"step": 1591, "router": "acc-12", "msg": "%SNMP-6-INFO: trap sent to collector 10.20.14.249", "fault": null}
+{"step": 1593, "router": "acc-07", "msg": "%SNMP-6-INFO: trap sent to collector 10.214.204.188", "fault": null}
+{"step": 1593, "router": "acc-08", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1593, "router": "acc-14", "msg": "%NTP-6-SYNC: clock synchronized to 10.243.175.246", "fault": null}
+{"step": 1594, "router": "agg-4", "msg": "%NTP-6-SYNC: clock synchronized to 10.27.73.109", "fault": null}
+{"step": 1598, "router": "agg-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1603, "router": "acc-11", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1604, "router": "acc-06", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1606, "router": "agg-8", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1612, "router": "acc-14", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1616, "router": "acc-03", "msg": "%NTP-6-SYNC: clock synchronized to 10.58.6.156", "fault": null}
+{"step": 1618, "router": "acc-08", "msg": "%NTP-6-SYNC: clock synchronized to 10.32.193.26", "fault": null}
+{"step": 1619, "router": "acc-14", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1621, "router": "acc-16", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1622, "router": "agg-4", "msg": "%NTP-6-SYNC: clock synchronized to 10.192.125.61", "fault": null}
+{"step": 1623, "router": "acc-07", "msg": "%SNMP-6-INFO: trap sent to collector 10.56.88.137", "fault": null}
+{"step": 1627, "router": "agg-4", "msg": "%NTP-6-SYNC: clock synchronized to 10.23.132.97", "fault": null}
+{"step": 1627, "router": "agg-6", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1632, "router": "acc-11", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1632, "router": "agg-3", "msg": "%SNMP-6-INFO: trap sent to collector 10.213.166.69", "fault": null}
+{"step": 1633, "router": "acc-10", "msg": "%NTP-6-SYNC: clock synchronized to 10.151.186.14", "fault": null}
+{"step": 1638, "router": "acc-07", "msg": "%NTP-6-SYNC: clock synchronized to 10.37.149.174", "fault": null}
+{"step": 1638, "router": "agg-5", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1639, "router": "acc-18", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1639, "router": "agg-6", "msg": "%SNMP-6-INFO: trap sent to collector 10.147.156.237", "fault": null}
+{"step": 1640, "router": "acc-14", "msg": "%NTP-6-SYNC: clock synchronized to 10.56.207.107", "fault": null}
+{"step": 1642, "router": "core-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1642, "router": "core-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.42.41.247", "fault": null}
+{"step": 1645, "router": "acc-09", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1649, "router": "core-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.78.227.148", "fault": null}
+{"step": 1650, "router": "agg-3", "msg": "%NTP-6-SYNC: clock synchronized to 10.54.84.143", "fault": null}
+{"step": 1656, "router": "acc-15", "msg": "%SNMP-6-INFO: trap sent to collector 10.61.210.62", "fault": null}
+{"step": 1662, "router": "agg-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.196.163.21", "fault": null}
+{"step": 1663, "router": "acc-08", "msg": "%NTP-6-SYNC: clock synchronized to 10.62.228.229", "fault": null}
+{"step": 1666, "router": "acc-09", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1666, "router": "agg-2", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1666, "router": "agg-3", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1667, "router": "acc-19", "msg": "%NTP-6-SYNC: clock synchronized to 10.57.109.94", "fault": null}
+{"step": 1669, "router": "agg-8", "msg": "%NTP-6-SYNC: clock synchronized to 10.80.117.51", "fault": null}
+{"step": 1673, "router": "acc-05", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1686, "router": "acc-06", "msg": "%NTP-6-SYNC: clock synchronized to 10.169.16.217", "fault": null}
+{"step": 1688, "router": "acc-16", "msg": "%SNMP-6-INFO: trap sent to collector 10.141.111.14", "fault": null}
+{"step": 1693, "router": "acc-16", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1693, "router": "acc-18", "msg": "%NTP-6-SYNC: clock synchronized to 10.33.167.141", "fault": null}
+{"step": 1696, "router": "agg-6", "msg": "%LINK-3-UPDOWN: Interface ge-0/0/2 to core-2, changed state to down", "fault": "F09"}
+{"step": 1697, "router": "acc-14", "msg": "%QOS-4-DROP: uplink packet loss 20% exceeds threshold", "fault": "F09"}
+{"step": 1697, "router": "agg-1", "msg": "%SNMP-6-INFO: trap sent to collector 10.236.166.186", "fault": null}
+{"step": 1698, "router": "acc-06", "msg": "%PING-4-SLA: probe to agg-6 latency 14 ms", "fault": "F09"}
+{"step": 1699, "router": "acc-06", "msg": "%QOS-4-DROP: uplink packet loss 26% exceeds threshold", "fault": "F09"}
+{"step": 1699, "router": "acc-14", "msg": "%PING-4-SLA: probe to agg-6 latency 15 ms", "fault": "F09"}
+{"step": 1699, "router": "acc-14", "msg": "%NTP-6-SYNC: clock synchronized to 10.131.111.219", "fault": null}
+{"step": 1699, "router": "acc-19", "msg": "%SNMP-6-INFO: trap sent to collector 10.205.72.127", "fault": null}
+{"step": 1700, "router": "acc-07", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1701, "router": "acc-05", "msg": "%SNMP-6-INFO: trap sent to collector 10.196.186.102", "fault": null}
+{"step": 1711, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1712, "router": "acc-13", "msg": "%SNMP-6-INFO: trap sent to collector 10.6.195.123", "fault": null}
+{"step": 1715, "router": "acc-03", "msg": "%NTP-6-SYNC: clock synchronized to 10.232.12.213", "fault": null}
+{"step": 1717, "router": "acc-14", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1718, "router": "acc-15", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1721, "router": "core-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.110.90.149", "fault": null}
+{"step": 1725, "router": "agg-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.142.43.168", "fault": null}
+{"step": 1733, "router": "agg-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1734, "router": "core-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.78.34.19", "fault": null}
+{"step": 1735, "router": "acc-07", "msg": "%SNMP-6-INFO: trap sent to collector 10.149.1.90", "fault": null}
+{"step": 1740, "router": "acc-19", "msg": "%NTP-6-SYNC: clock synchronized to 10.41.235.74", "fault": null}
+{"step": 1745, "router": "acc-07", "msg": "%SNMP-6-INFO: trap sent to collector 10.110.67.126", "fault": null}
+{"step": 1751, "router": "core-1", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1756, "router": "acc-07", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1756, "router": "acc-20", "msg": "%NTP-6-SYNC: clock synchronized to 10.95.138.241", "fault": null}
+{"step": 1756, "router": "core-2", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1759, "router": "agg-3", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1760, "router": "acc-16", "msg": "%SNMP-6-INFO: trap sent to collector 10.124.83.174", "fault": null}
+{"step": 1765, "router": "acc-12", "msg": "%SNMP-6-INFO: trap sent to collector 10.23.203.193", "fault": null}
+{"step": 1765, "router": "acc-19", "msg": "%NTP-6-SYNC: clock synchronized to 10.10.250.212", "fault": null}
+{"step": 1767, "router": "acc-11", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1769, "router": "agg-5", "msg": "%SNMP-6-INFO: trap sent to collector 10.118.180.91", "fault": null}
+{"step": 1776, "router": "acc-13", "msg": "%SNMP-6-INFO: trap sent to collector 10.56.73.6", "fault": null}
+{"step": 1778, "router": "agg-8", "msg": "%PING-6-SLA: probe jitter 3 ms", "fault": null}
+{"step": 1780, "router": "acc-13", "msg": "%NTP-6-SYNC: clock synchronized to 10.46.80.193", "fault": null}
+{"step": 1782, "router": "agg-7", "msg": "%NTP-6-SYNC: clock synchronized to 10.245.84.105", "fault": null}
+{"step": 1785, "router": "acc-05", "msg": "%SNMP-6-INFO: trap sent to collector 10.215.116.192", "fault": null}
+{"step": 1788, "router": "agg-7", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1789, "router": "agg-3", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1799, "router": "agg-7", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1805, "router": "acc-06", "msg": "%SNMP-6-INFO: trap sent to collector 10.9.40.73", "fault": null}
+{"step": 1806, "router": "acc-04", "msg": "%NTP-6-SYNC: clock synchronized to 10.110.12.156", "fault": null}
+{"step": 1812, "router": "acc-20", "msg": "%NTP-6-SYNC: clock synchronized to 10.76.168.162", "fault": null}
+{"step": 1814, "router": "agg-3", "msg": "%SYS-4-CPUHOG: process routing-daemon used 96% CPU for 56 s", "fault": "F10"}
+{"step": 1816, "router": "acc-13", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1817, "router": "acc-03", "msg": "%PING-4-SLA: probe to agg-3 latency 7 ms", "fault": "F10"}
+{"step": 1817, "router": "acc-14", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1817, "router": "acc-19", "msg": "%PING-4-SLA: probe to agg-3 latency 7 ms", "fault": "F10"}
+{"step": 1817, "router": "agg-4", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1817, "router": "agg-6", "msg": "%SNMP-6-INFO: trap sent to collector 10.105.34.54", "fault": null}
+{"step": 1818, "router": "acc-11", "msg": "%PING-4-SLA: probe to agg-3 latency 8 ms", "fault": "F10"}
+{"step": 1820, "router": "agg-5", "msg": "%SNMP-6-INFO: trap sent to collector 10.161.55.123", "fault": null}
+{"step": 1822, "router": "acc-09", "msg": "%SNMP-6-INFO: trap sent to collector 10.33.5.198", "fault": null}
+{"step": 1824, "router": "acc-01", "msg": "%SNMP-6-INFO: trap sent to collector 10.76.243.27", "fault": null}
+{"step": 1824, "router": "acc-02", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1829, "router": "acc-15", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1829, "router": "agg-3", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1833, "router": "acc-13", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1837, "router": "acc-20", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1838, "router": "agg-3", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1838, "router": "core-2", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1843, "router": "agg-1", "msg": "%SNMP-6-INFO: trap sent to collector 10.99.133.253", "fault": null}
+{"step": 1845, "router": "core-1", "msg": "%SNMP-6-INFO: trap sent to collector 10.57.66.239", "fault": null}
+{"step": 1853, "router": "acc-06", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1853, "router": "acc-09", "msg": "%NTP-6-SYNC: clock synchronized to 10.128.201.245", "fault": null}
+{"step": 1854, "router": "agg-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.32.40.218", "fault": null}
+{"step": 1856, "router": "agg-5", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1856, "router": "agg-7", "msg": "%SNMP-6-INFO: trap sent to collector 10.28.237.55", "fault": null}
+{"step": 1857, "router": "acc-11", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1857, "router": "agg-5", "msg": "%NTP-6-SYNC: clock synchronized to 10.221.8.84", "fault": null}
+{"step": 1858, "router": "agg-6", "msg": "%SNMP-6-INFO: trap sent to collector 10.230.27.112", "fault": null}
+{"step": 1863, "router": "acc-17", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1867, "router": "acc-16", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1868, "router": "acc-11", "msg": "%SNMP-6-INFO: trap sent to collector 10.150.36.130", "fault": null}
+{"step": 1870, "router": "acc-04", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1870, "router": "acc-17", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1873, "router": "core-1", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1878, "router": "acc-05", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1882, "router": "acc-15", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1885, "router": "agg-6", "msg": "%NTP-6-SYNC: clock synchronized to 10.225.218.67", "fault": null}
+{"step": 1888, "router": "agg-6", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1890, "router": "acc-10", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1890, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1891, "router": "acc-03", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1892, "router": "acc-20", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1894, "router": "acc-20", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1896, "router": "acc-12", "msg": "%NTP-6-SYNC: clock synchronized to 10.59.197.210", "fault": null}
+{"step": 1898, "router": "agg-3", "msg": "%NTP-6-SYNC: clock synchronized to 10.201.249.198", "fault": null}
+{"step": 1900, "router": "acc-07", "msg": "%SNMP-6-INFO: trap sent to collector 10.35.39.164", "fault": null}
+{"step": 1900, "router": "acc-19", "msg": "%NTP-6-SYNC: clock synchronized to 10.136.171.67", "fault": null}
+{"step": 1900, "router": "agg-2", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1904, "router": "agg-4", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1906, "router": "agg-7", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1909, "router": "acc-14", "msg": "%NTP-6-SYNC: clock synchronized to 10.69.66.244", "fault": null}
+{"step": 1910, "router": "acc-18", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1910, "router": "core-2", "msg": "%SNMP-6-INFO: trap sent to collector 10.82.177.120", "fault": null}
+{"step": 1918, "router": "acc-16", "msg": "%NTP-6-SYNC: clock synchronized to 10.181.242.193", "fault": null}
+{"step": 1919, "router": "acc-01", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1920, "router": "acc-15", "msg": "%NTP-6-SYNC: clock synchronized to 10.91.45.106", "fault": null}
+{"step": 1922, "router": "acc-01", "msg": "%NTP-6-SYNC: clock synchronized to 10.170.198.20", "fault": null}
+{"step": 1923, "router": "acc-19", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1930, "router": "acc-15", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1931, "router": "acc-03", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1932, "router": "acc-05", "msg": "%NTP-6-SYNC: clock synchronized to 10.234.169.5", "fault": null}
+{"step": 1932, "router": "acc-14", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1933, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1937, "router": "acc-14", "msg": "%SNMP-6-INFO: trap sent to collector 10.46.51.218", "fault": null}
+{"step": 1940, "router": "acc-03", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1943, "router": "acc-15", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1946, "router": "acc-05", "msg": "%QOS-4-DROP: uplink packet loss 14% exceeds threshold", "fault": "F11"}
+{"step": 1946, "router": "acc-13", "msg": "%QOS-4-DROP: uplink packet loss 11% exceeds threshold", "fault": "F11"}
+{"step": 1946, "router": "agg-5", "msg": "%BGP-5-ADJCHANGE: neighbor 10.104.111.173 Down - hold timer expired", "fault": "F11"}
+{"step": 1946, "router": "agg-5", "msg": "%BGP-5-ADJCHANGE: neighbor 10.215.52.71 Up", "fault": "F11"}
+{"step": 1949, "router": "agg-8", "msg": "%SNMP-6-INFO: trap sent to collector 10.205.32.133", "fault": null}
+{"step": 1949, "router": "core-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1953, "router": "acc-06", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1953, "router": "acc-07", "msg": "%NTP-6-SYNC: clock synchronized to 10.82.214.99", "fault": null}
+{"step": 1961, "router": "acc-08", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1963, "router": "agg-2", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1964, "router": "acc-13", "msg": "%NTP-6-SYNC: clock synchronized to 10.32.108.198", "fault": null}
+{"step": 1964, "router": "agg-2", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1965, "router": "acc-01", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1965, "router": "acc-17", "msg": "%SNMP-6-INFO: trap sent to collector 10.116.195.225", "fault": null}
+{"step": 1968, "router": "agg-4", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1969, "router": "acc-05", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1971, "router": "acc-03", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1974, "router": "agg-5", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1978, "router": "agg-8", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1980, "router": "acc-02", "msg": "%NTP-6-SYNC: clock synchronized to 10.238.65.108", "fault": null}
+{"step": 1983, "router": "agg-2", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1986, "router": "acc-06", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 1992, "router": "acc-15", "msg": "%SNMP-6-INFO: trap sent to collector 10.198.14.46", "fault": null}
+{"step": 1993, "router": "acc-03", "msg": "%NTP-6-SYNC: clock synchronized to 10.197.211.179", "fault": null}
+{"step": 1996, "router": "agg-6", "msg": "%SNMP-6-INFO: trap sent to collector 10.1.12.42", "fault": null}
+{"step": 1997, "router": "acc-12", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 1997, "router": "core-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.165.147.109", "fault": null}
+{"step": 2001, "router": "acc-13", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2008, "router": "agg-8", "msg": "%NTP-6-SYNC: clock synchronized to 10.11.58.151", "fault": null}
+{"step": 2009, "router": "acc-07", "msg": "%SNMP-6-INFO: trap sent to collector 10.44.40.89", "fault": null}
+{"step": 2011, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2015, "router": "acc-13", "msg": "%SNMP-6-INFO: trap sent to collector 10.27.191.243", "fault": null}
+{"step": 2016, "router": "acc-05", "msg": "%NTP-6-SYNC: clock synchronized to 10.207.129.154", "fault": null}
+{"step": 2016, "router": "acc-13", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 2019, "router": "agg-5", "msg": "%NTP-6-SYNC: clock synchronized to 10.253.130.55", "fault": null}
+{"step": 2021, "router": "acc-16", "msg": "%SYS-6-INFO: scheduled job backup-config started", "fault": null}
+{"step": 2024, "router": "acc-18", "msg": "%NTP-6-SYNC: clock synchronized to 10.91.174.214", "fault": null}
+{"step": 2027, "router": "acc-05", "msg": "%NTP-6-SYNC: clock synchronized to 10.211.101.43", "fault": null}
+{"step": 2027, "router": "acc-12", "msg": "%NTP-6-SYNC: clock synchronized to 10.17.205.189", "fault": null}
+{"step": 2030, "router": "agg-8", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 2033, "router": "acc-20", "msg": "%SNMP-6-INFO: trap sent to collector 10.226.127.180", "fault": null}
+{"step": 2034, "router": "acc-12", "msg": "%SNMP-6-INFO: trap sent to collector 10.217.149.33", "fault": null}
+{"step": 2034, "router": "acc-14", "msg": "%SNMP-6-INFO: trap sent to collector 10.131.243.185", "fault": null}
+{"step": 2043, "router": "agg-6", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 2046, "router": "acc-10", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 2048, "router": "acc-08", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2054, "router": "acc-16", "msg": "%NTP-6-SYNC: clock synchronized to 10.212.107.97", "fault": null}
+{"step": 2056, "router": "core-1", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 2058, "router": "acc-02", "msg": "%SNMP-6-INFO: trap sent to collector 10.176.247.47", "fault": null}
+{"step": 2059, "router": "acc-10", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2062, "router": "acc-03", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2066, "router": "acc-06", "msg": "%NTP-6-SYNC: clock synchronized to 10.105.200.188", "fault": null}
+{"step": 2068, "router": "agg-4", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2073, "router": "acc-16", "msg": "%QOS-4-DROP: uplink packet loss 9% exceeds threshold", "fault": "F12"}
+{"step": 2073, "router": "agg-8", "msg": "%BGP-5-ADJCHANGE: neighbor 10.68.181.142 Down - hold timer expired", "fault": "F12"}
+{"step": 2074, "router": "agg-8", "msg": "%BGP-5-ADJCHANGE: neighbor 10.4.61.165 Up", "fault": "F12"}
+{"step": 2075, "router": "acc-08", "msg": "%QOS-4-DROP: uplink packet loss 16% exceeds threshold", "fault": "F12"}
+{"step": 2080, "router": "acc-11", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 2080, "router": "acc-15", "msg": "%NTP-6-SYNC: clock synchronized to 10.11.39.80", "fault": null}
+{"step": 2082, "router": "agg-4", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2089, "router": "acc-03", "msg": "%SNMP-6-INFO: trap sent to collector 10.23.161.23", "fault": null}
+{"step": 2089, "router": "acc-16", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2092, "router": "acc-03", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2092, "router": "acc-06", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2093, "router": "acc-12", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2094, "router": "acc-08", "msg": "%NTP-6-SYNC: clock synchronized to 10.248.205.199", "fault": null}
+{"step": 2100, "router": "acc-09", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2100, "router": "agg-5", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2101, "router": "acc-17", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2103, "router": "acc-05", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2104, "router": "acc-06", "msg": "%NTP-6-SYNC: clock synchronized to 10.203.214.235", "fault": null}
+{"step": 2105, "router": "agg-8", "msg": "%SNMP-6-INFO: trap sent to collector 10.132.215.25", "fault": null}
+{"step": 2105, "router": "agg-8", "msg": "%SNMP-6-INFO: trap sent to collector 10.6.100.250", "fault": null}
+{"step": 2120, "router": "acc-17", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 2125, "router": "core-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.37.29.205", "fault": null}
+{"step": 2126, "router": "acc-17", "msg": "%SNMP-6-INFO: trap sent to collector 10.17.114.236", "fault": null}
+{"step": 2130, "router": "acc-09", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 2132, "router": "core-2", "msg": "%NTP-6-SYNC: clock synchronized to 10.54.16.115", "fault": null}
+{"step": 2136, "router": "acc-12", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 2136, "router": "acc-19", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2136, "router": "agg-7", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2141, "router": "acc-09", "msg": "%NTP-6-SYNC: clock synchronized to 10.220.185.14", "fault": null}
+{"step": 2141, "router": "agg-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.239.54.88", "fault": null}
+{"step": 2143, "router": "agg-2", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 2144, "router": "acc-01", "msg": "%SNMP-6-INFO: trap sent to collector 10.199.204.18", "fault": null}
+{"step": 2147, "router": "agg-7", "msg": "%SNMP-6-INFO: trap sent to collector 10.11.85.52", "fault": null}
+{"step": 2148, "router": "acc-08", "msg": "%NTP-6-SYNC: clock synchronized to 10.0.181.55", "fault": null}
+{"step": 2148, "router": "agg-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.90.198.56", "fault": null}
+{"step": 2150, "router": "acc-09", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 2155, "router": "acc-14", "msg": "%NTP-6-SYNC: clock synchronized to 10.197.150.72", "fault": null}
+{"step": 2157, "router": "agg-2", "msg": "%SYS-6-CONFIG: configuration saved by noc-bot", "fault": null}
+{"step": 2159, "router": "acc-16", "msg": "%SYS-6-LOGIN: user noc-bot logged in via ssh", "fault": null}
+{"step": 2159, "router": "core-1", "msg": "%NTP-6-SYNC: clock synchronized to 10.142.66.7", "fault": null}

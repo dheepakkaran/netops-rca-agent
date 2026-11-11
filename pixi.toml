@@ -1,0 +1,11 @@
+[workspace]
+authors = ["Dheepak Karan <67942227+dheepakkaran@users.noreply.github.com>"]
+channels = ['conda-forge']
+name = "netops-rca-agent"
+platforms = ['linux-64']
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+openjdk = "17.*"

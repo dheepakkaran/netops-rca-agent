@@ -1,0 +1,8 @@
+{
+  "seconds": 54.2,
+  "raw_rows": 64800,
+  "minute_rows_upserted": 10800,
+  "alarm_rows": 986,
+  "end_to_end_rows_per_s": 1196,
+  "spark_peak_processed_rows_per_s": 3087
+}

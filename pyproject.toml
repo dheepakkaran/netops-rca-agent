@@ -1,0 +1,26 @@
+[project]
+name = "netops-rca-agent"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic",
+    "cassandra-driver",
+    "chromadb",
+    "kafka-python-ng",
+    "networkx",
+    "numpy",
+    "pandas<3",
+    "pyspark",
+    "pytest",
+    "scikit-learn",
+    "torch",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }

@@ -1,0 +1,9 @@
+.venv/
+.pixi/
+.services/
+.data/
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+artifacts/

@@ -1,0 +1,512 @@
+{
+ "topology": {
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+   {
+    "tier": "core",
+    "id": "core-1"
+   },
+   {
+    "tier": "core",
+    "id": "core-2"
+   },
+   {
+    "tier": "agg",
+    "id": "agg-1"
+   },
+   {
+    "tier": "agg",
+    "id": "agg-2"
+   },
+   {
+    "tier": "agg",
+    "id": "agg-3"
+   },
+   {
+    "tier": "agg",
+    "id": "agg-4"
+   },
+   {
+    "tier": "agg",
+    "id": "agg-5"
+   },
+   {
+    "tier": "agg",
+    "id": "agg-6"
+   },
+   {
+    "tier": "agg",
+    "id": "agg-7"
+   },
+   {
+    "tier": "agg",
+    "id": "agg-8"
+   },
+   {
+    "tier": "access",
+    "id": "acc-01"
+   },
+   {
+    "tier": "access",
+    "id": "acc-02"
+   },
+   {
+    "tier": "access",
+    "id": "acc-03"
+   },
+   {
+    "tier": "access",
+    "id": "acc-04"
+   },
+   {
+    "tier": "access",
+    "id": "acc-05"
+   },
+   {
+    "tier": "access",
+    "id": "acc-06"
+   },
+   {
+    "tier": "access",
+    "id": "acc-07"
+   },
+   {
+    "tier": "access",
+    "id": "acc-08"
+   },
+   {
+    "tier": "access",
+    "id": "acc-09"
+   },
+   {
+    "tier": "access",
+    "id": "acc-10"
+   },
+   {
+    "tier": "access",
+    "id": "acc-11"
+   },
+   {
+    "tier": "access",
+    "id": "acc-12"
+   },
+   {
+    "tier": "access",
+    "id": "acc-13"
+   },
+   {
+    "tier": "access",
+    "id": "acc-14"
+   },
+   {
+    "tier": "access",
+    "id": "acc-15"
+   },
+   {
+    "tier": "access",
+    "id": "acc-16"
+   },
+   {
+    "tier": "access",
+    "id": "acc-17"
+   },
+   {
+    "tier": "access",
+    "id": "acc-18"
+   },
+   {
+    "tier": "access",
+    "id": "acc-19"
+   },
+   {
+    "tier": "access",
+    "id": "acc-20"
+   }
+  ],
+  "links": [
+   {
+    "source": "agg-1",
+    "target": "core-1"
+   },
+   {
+    "source": "agg-2",
+    "target": "core-2"
+   },
+   {
+    "source": "agg-3",
+    "target": "core-1"
+   },
+   {
+    "source": "agg-4",
+    "target": "core-2"
+   },
+   {
+    "source": "agg-5",
+    "target": "core-1"
+   },
+   {
+    "source": "agg-6",
+    "target": "core-2"
+   },
+   {
+    "source": "agg-7",
+    "target": "core-1"
+   },
+   {
+    "source": "agg-8",
+    "target": "core-2"
+   },
+   {
+    "source": "acc-01",
+    "target": "agg-1"
+   },
+   {
+    "source": "acc-02",
+    "target": "agg-2"
+   },
+   {
+    "source": "acc-03",
+    "target": "agg-3"
+   },
+   {
+    "source": "acc-04",
+    "target": "agg-4"
+   },
+   {
+    "source": "acc-05",
+    "target": "agg-5"
+   },
+   {
+    "source": "acc-06",
+    "target": "agg-6"
+   },
+   {
+    "source": "acc-07",
+    "target": "agg-7"
+   },
+   {
+    "source": "acc-08",
+    "target": "agg-8"
+   },
+   {
+    "source": "acc-09",
+    "target": "agg-1"
+   },
+   {
+    "source": "acc-10",
+    "target": "agg-2"
+   },
+   {
+    "source": "acc-11",
+    "target": "agg-3"
+   },
+   {
+    "source": "acc-12",
+    "target": "agg-4"
+   },
+   {
+    "source": "acc-13",
+    "target": "agg-5"
+   },
+   {
+    "source": "acc-14",
+    "target": "agg-6"
+   },
+   {
+    "source": "acc-15",
+    "target": "agg-7"
+   },
+   {
+    "source": "acc-16",
+    "target": "agg-8"
+   },
+   {
+    "source": "acc-17",
+    "target": "agg-1"
+   },
+   {
+    "source": "acc-18",
+    "target": "agg-2"
+   },
+   {
+    "source": "acc-19",
+    "target": "agg-3"
+   },
+   {
+    "source": "acc-20",
+    "target": "agg-4"
+   }
+  ]
+ },
+ "faults": [
+  {
+   "id": "F01",
+   "type": "cpu_overload",
+   "root": "core-1",
+   "start": 780,
+   "end": 810,
+   "affected": [
+    "core-1",
+    "acc-01",
+    "acc-03",
+    "acc-05",
+    "acc-07",
+    "acc-09",
+    "acc-11",
+    "acc-13",
+    "acc-15",
+    "acc-17",
+    "acc-19",
+    "agg-1",
+    "agg-3",
+    "agg-5",
+    "agg-7"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "F02",
+   "type": "cpu_overload",
+   "root": "agg-7",
+   "start": 904,
+   "end": 926,
+   "affected": [
+    "agg-7",
+    "acc-07",
+    "acc-15"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "F03",
+   "type": "bgp_misconfig",
+   "root": "core-1",
+   "start": 1019,
+   "end": 1041,
+   "affected": [
+    "core-1",
+    "acc-01",
+    "acc-03",
+    "acc-05",
+    "acc-07",
+    "acc-09",
+    "acc-11",
+    "acc-13",
+    "acc-15",
+    "acc-17",
+    "acc-19",
+    "agg-1",
+    "agg-3",
+    "agg-5",
+    "agg-7"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "F04",
+   "type": "link_down",
+   "root": "agg-1",
+   "start": 1125,
+   "end": 1162,
+   "affected": [
+    "agg-1",
+    "acc-01",
+    "acc-09",
+    "acc-17"
+   ],
+   "split": "dev"
+  },
+  {
+   "id": "F05",
+   "type": "link_down",
+   "root": "acc-05",
+   "start": 1241,
+   "end": 1268,
+   "affected": [
+    "acc-05"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "F06",
+   "type": "link_down",
+   "root": "acc-13",
+   "start": 1346,
+   "end": 1381,
+   "affected": [
+    "acc-13"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "F07",
+   "type": "bgp_misconfig",
+   "root": "agg-2",
+   "start": 1458,
+   "end": 1498,
+   "affected": [
+    "agg-2",
+    "acc-02",
+    "acc-10",
+    "acc-18"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "F08",
+   "type": "cpu_overload",
+   "root": "core-2",
+   "start": 1581,
+   "end": 1611,
+   "affected": [
+    "core-2",
+    "acc-02",
+    "acc-04",
+    "acc-06",
+    "acc-08",
+    "acc-10",
+    "acc-12",
+    "acc-14",
+    "acc-16",
+    "acc-18",
+    "acc-20",
+    "agg-2",
+    "agg-4",
+    "agg-6",
+    "agg-8"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "F09",
+   "type": "link_down",
+   "root": "agg-6",
+   "start": 1696,
+   "end": 1728,
+   "affected": [
+    "agg-6",
+    "acc-06",
+    "acc-14"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "F10",
+   "type": "cpu_overload",
+   "root": "agg-3",
+   "start": 1814,
+   "end": 1844,
+   "affected": [
+    "agg-3",
+    "acc-03",
+    "acc-11",
+    "acc-19"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "F11",
+   "type": "bgp_misconfig",
+   "root": "agg-5",
+   "start": 1943,
+   "end": 1979,
+   "affected": [
+    "agg-5",
+    "acc-05",
+    "acc-13"
+   ],
+   "split": "test"
+  },
+  {
+   "id": "F12",
+   "type": "bgp_misconfig",
+   "root": "agg-8",
+   "start": 2072,
+   "end": 2106,
+   "affected": [
+    "agg-8",
+    "acc-08",
+    "acc-16"
+   ],
+   "split": "test"
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "router": "core-2",
+   "kpi": "traffic_mbps",
+   "start": 848,
+   "end": 849
+  },
+  {
+   "id": "D2",
+   "router": "acc-05",
+   "kpi": "latency_ms",
+   "start": 1091,
+   "end": 1093
+  },
+  {
+   "id": "D3",
+   "router": "acc-02",
+   "kpi": "traffic_mbps",
+   "start": 1295,
+   "end": 1296
+  },
+  {
+   "id": "D4",
+   "router": "acc-16",
+   "kpi": "latency_ms",
+   "start": 1527,
+   "end": 1528
+  },
+  {
+   "id": "D5",
+   "router": "agg-8",
+   "kpi": "latency_ms",
+   "start": 1778,
+   "end": 1780
+  },
+  {
+   "id": "D6",
+   "router": "acc-16",
+   "kpi": "cpu_pct",
+   "start": 2021,
+   "end": 2022
+  }
+ ],
+ "lag": {
+  "acc-01": 1,
+  "acc-02": 0,
+  "acc-03": 1,
+  "acc-04": 1,
+  "acc-05": 2,
+  "acc-06": 0,
+  "acc-07": 2,
+  "acc-08": 1,
+  "acc-09": 2,
+  "acc-10": 0,
+  "acc-11": 1,
+  "acc-12": 1,
+  "acc-13": 2,
+  "acc-14": 0,
+  "acc-15": 0,
+  "acc-16": 0,
+  "acc-17": 1,
+  "acc-18": 0,
+  "acc-19": 0,
+  "acc-20": 0,
+  "agg-1": 1,
+  "agg-2": 2,
+  "agg-3": 0,
+  "agg-4": 0,
+  "agg-5": 1,
+  "agg-6": 0,
+  "agg-7": 2,
+  "agg-8": 0,
+  "core-1": 1,
+  "core-2": 0
+ }
+}

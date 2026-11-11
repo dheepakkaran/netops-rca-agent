@@ -1,0 +1,111 @@
+[
+ {
+  "incident": "dev-01",
+  "fault": "F01",
+  "true_root": "core-1",
+  "true_type": "cpu_overload",
+  "root_router": "core-1",
+  "fault_type": "cpu_overload",
+  "confidence": 0.88,
+  "evidence": [
+   "core-1 is the only router with a 'Routing process CPU hog detected' (CPUHOG) alarm; all others show only SLA latency warnings",
+   "core-1 cpu_pct z up to 38.1 and highest latency z 45.7; traffic and loss near normal (|z|<3)",
+   "All 14 other anomalous routers (agg-1/3/5/7 and their access children) sit behind core-1 and show latency only",
+   "core-1 anomalous at t=0, downstream routers at 0-30 s, consistent with monitoring lag",
+   "Matches RB-02: CPU overload on one router, latency on it and the routers behind it, no loss"
+  ],
+  "runbook_id": "RB-02",
+  "next_step": "Ask the core-1 owner to find the routing process using the CPU (process list, routing-table churn, scheduled jobs, recent software change) and consider rate-limiting control-plane traffic. Confirm downstream latency clears once core-1 recovers. Also look at the slight rise in bgp_flaps on core-1 (z 6).",
+  "tool_calls": 2,
+  "turns": 2,
+  "root_correct": true,
+  "type_correct": true
+ },
+ {
+  "incident": "dev-02",
+  "fault": "F02",
+  "true_root": "agg-7",
+  "true_type": "cpu_overload",
+  "root_router": "agg-7",
+  "fault_type": "cpu_overload",
+  "confidence": 0.85,
+  "evidence": [
+   "agg-7 is the shared uplink of both anomalous access routers acc-15 and acc-07",
+   "agg-7 has the highest latency z-score (48.7) and a 'Routing process CPU hog detected' alarm",
+   "agg-7 cpu_pct z up to 40; traffic (max z 2.4) and loss (max z 2.7) near normal, which fits CPU overload rather than link_down",
+   "acc-15 and acc-07 show only SLA latency warnings (downstream victims); acc-15 being seen first is explained by the 0-20 s monitoring lag",
+   "Moderate bgp_flaps z (4.9) on agg-7 fits routing-process churn; no BGP Down/Up alarms reported"
+  ],
+  "runbook_id": "RB-02",
+  "next_step": "Ask the agg-7 owner to identify the routing process hogging CPU (check process list, routing table churn, scheduled jobs, recent software changes); consider rate-limiting control-plane traffic. Confirm acc-15/acc-07 latency clears once agg-7 recovers.",
+  "tool_calls": 2,
+  "turns": 2,
+  "root_correct": true,
+  "type_correct": true
+ },
+ {
+  "incident": "dev-03",
+  "fault": "F03",
+  "true_root": "core-1",
+  "true_type": "bgp_misconfig",
+  "root_router": "core-1",
+  "fault_type": "bgp_misconfig",
+  "confidence": 0.8,
+  "evidence": [
+   "All 4 anomalous agg routers (agg-1/3/5/7) share uplink core-1, and every anomalous access router sits behind them: 15 routers in total, all showing loss_pct",
+   "core-1 alarm log: %BGP-5-ADJCHANGE neighbor 10.207.81.113 Down - hold timer expired, plus neighbor 10.254.209.31 Up (BGP Down/Up)",
+   "core-1's top KPI is bgp_flaps (z=43.1), with no loss or traffic collapse of its own. This matches RB-03: the flapping router stays quiet while the routers behind it show loss",
+   "Downstream routers only log 'Uplink packet loss threshold exceeded'. There are no link-down or CPUHOG alarms anywhere",
+   "Caveat: core-1's first anomaly was seen at 190 s, later than the 0-20 s lag explains. Its BGP alarms were not timestamped, so the order of events is not confirmed"
+  ],
+  "runbook_id": "RB-03",
+  "next_step": "Check the last config commit on core-1 (BGP timers, policy, neighbor addresses), check the hold-timer and logs of peer 10.207.81.113, and confirm whether the BGP Down came before the downstream loss. If a recent BGP change is found, roll it back after approval and confirm the session stays up for 10 minutes. Don't apply fixes on the access layer.",
+  "tool_calls": 2,
+  "turns": 2,
+  "root_correct": true,
+  "type_correct": true
+ },
+ {
+  "incident": "dev-04",
+  "fault": null,
+  "true_root": null,
+  "true_type": null,
+  "root_router": "none",
+  "fault_type": "transient_noise",
+  "confidence": 0.8,
+  "evidence": [
+   "Only one router anomalous (acc-05), 20 s duration",
+   "acc-05 latency z max 59.7, but traffic, loss and CPU stayed near normal",
+   "acc-05's only alarm is informational: %PING-6-SLA probe jitter 2 ms (severity 6)",
+   "Uplink agg-5 logged no alarms; no neighbors affected",
+   "bgp_flaps z reached 6.6 but no BGP Down/Up alarms were logged, so no BGP fault is confirmed"
+  ],
+  "runbook_id": "RB-06",
+  "next_step": "No action; record as noise. Check for scheduled jobs or maintenance on acc-05 at that time. Watch for repeats or spread to agg-5 neighbors, and confirm the bgp_flaps counter blip is not a real session flap.",
+  "tool_calls": 4,
+  "turns": 3,
+  "root_correct": true,
+  "type_correct": true
+ },
+ {
+  "incident": "dev-05",
+  "fault": "F04",
+  "true_root": "agg-1",
+  "true_type": "link_down",
+  "root_router": "agg-1",
+  "fault_type": "link_down",
+  "confidence": 0.92,
+  "evidence": [
+   "agg-1 logged %LINK-3-UPDOWN: Interface ge-0/0/3 to core-1, changed state to down",
+   "agg-1 loss_pct z=3721 (highest), traffic_mbps z min -6.7 (traffic collapsed), CPU normal",
+   "acc-17, acc-01, acc-09 all have agg-1 as uplink and show uplink loss + SLA latency 10-30 s later",
+   "No BGP Down/Up or CPUHOG alarms on agg-1; small bgp_flaps rise is consistent with the link loss"
+  ],
+  "runbook_id": "RB-01",
+  "next_step": "Open a ticket for agg-1 uplink ge-0/0/3 toward core-1: check interface counters/optics, the far-end port on core-1, and recent maintenance. Do not reroute the access routers; they are symptoms.",
+  "tool_calls": 3,
+  "turns": 3,
+  "root_correct": true,
+  "type_correct": true
+ }
+]
