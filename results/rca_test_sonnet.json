@@ -1,0 +1,187 @@
+[
+ {
+  "incident": "test-01",
+  "fault": "F05",
+  "true_root": "acc-05",
+  "true_type": "link_down",
+  "root_router": "acc-05",
+  "fault_type": "link_down",
+  "confidence": 0.85,
+  "evidence": [
+   "acc-05 is the only anomalous router and has no dependents",
+   "loss_pct z=5552, traffic z down to -6.8",
+   "Alarm: Interface link changed to down",
+   "CPU normal, so not cpu_overload"
+  ],
+  "runbook_id": "RB-01",
+  "next_step": "Open a ticket for acc-05's uplink toward agg-5. Check interface counters and optics on the port, the far-end port on agg-5, and recent maintenance.",
+  "tool_calls": 3,
+  "turns": 2,
+  "root_correct": true,
+  "type_correct": true
+ },
+ {
+  "incident": "test-02",
+  "fault": "F06",
+  "true_root": "acc-13",
+  "true_type": "link_down",
+  "root_router": "acc-13",
+  "fault_type": "link_down",
+  "confidence": 0.9,
+  "evidence": [
+   "acc-13 is the only anomalous router; loss_pct z\u22484866",
+   "acc-13 logged 'Interface link changed to down'",
+   "uplink agg-5 has no alarms and acc-13 has no dependents, so there is no shared-parent cause"
+  ],
+  "runbook_id": "RB-01",
+  "next_step": "Open a ticket for acc-13's uplink toward agg-5. Check the port counters and optics, check the far-end port on agg-5, and look for recent maintenance.",
+  "tool_calls": 3,
+  "turns": 2,
+  "root_correct": true,
+  "type_correct": true
+ },
+ {
+  "incident": "test-03",
+  "fault": "F07",
+  "true_root": "agg-2",
+  "true_type": "bgp_misconfig",
+  "root_router": "agg-2",
+  "fault_type": "bgp_misconfig",
+  "confidence": 0.85,
+  "evidence": [
+   "acc-02, acc-10 and acc-18 all share uplink agg-2 and show loss with uplink packet loss alarms",
+   "agg-2 logged 'BGP neighbor down, hold timer expired' followed by 'session re-established'",
+   "The access routers are victims; agg-2 is the shared parent"
+  ],
+  "runbook_id": "RB-03",
+  "next_step": "Review the last BGP config commit on agg-2 (timers, policy, neighbor addresses) and the peer's logs. Roll back that change after approval, then confirm the session stays up for 10 minutes.",
+  "tool_calls": 1,
+  "turns": 2,
+  "root_correct": true,
+  "type_correct": true
+ },
+ {
+  "incident": "test-04",
+  "fault": "F08",
+  "true_root": "core-2",
+  "true_type": "cpu_overload",
+  "root_router": "core-2",
+  "fault_type": "cpu_overload",
+  "confidence": 0.9,
+  "evidence": [
+   "core-2 is the root of the tree and was anomalous from t=0, with latency z=49.9 and CPU z=40.3",
+   "core-2 logged a 'Routing process CPU hog detected' alarm",
+   "All agg routers and their access routers show latency-only anomalies, and their alarms are only SLA latency warnings",
+   "No link-down or BGP down alarms were reported"
+  ],
+  "runbook_id": "RB-02",
+  "next_step": "Ask the core-2 owner to identify the hogging routing process, check routing churn, scheduled jobs and recent changes, and consider rate-limiting control-plane traffic.",
+  "tool_calls": 2,
+  "turns": 2,
+  "root_correct": true,
+  "type_correct": true
+ },
+ {
+  "incident": "test-05",
+  "fault": "F09",
+  "true_root": "agg-6",
+  "true_type": "link_down",
+  "root_router": "agg-6",
+  "fault_type": "link_down",
+  "confidence": 0.92,
+  "evidence": [
+   "agg-6 logged 'Interface link changed to down'",
+   "agg-6 loss_pct z=5466, traffic z down to -6.8, CPU and BGP normal",
+   "acc-06 and acc-14 share uplink agg-6 and show loss and SLA latency alarms 10-20s later",
+   "RB-01 matches"
+  ],
+  "runbook_id": "RB-01",
+  "next_step": "Open a ticket for agg-6's uplink toward core-2. Check interface counters, optics and the far-end port on core-2, plus any recent maintenance. Don't reroute the access routers, since they are only symptoms.",
+  "tool_calls": 2,
+  "turns": 2,
+  "root_correct": true,
+  "type_correct": true
+ },
+ {
+  "incident": "test-06",
+  "fault": null,
+  "true_root": null,
+  "true_type": null,
+  "root_router": "none",
+  "fault_type": "transient_noise",
+  "confidence": 0.7,
+  "evidence": [
+   "Only agg-8 anomalous; its children and uplink are not flagged",
+   "Only an informational SLA jitter alarm (3 ms)",
+   "CPU normal, traffic only mildly low, loss z max 1.9",
+   "No link-down, CPUHOG or BGP Down/Up alarms"
+  ],
+  "runbook_id": "transient_noise",
+  "next_step": "Don't escalate. Watch agg-8 latency and BGP flaps for a few minutes. Reopen the incident if the anomaly lasts or spreads to acc-08 or acc-16.",
+  "tool_calls": 3,
+  "turns": 2,
+  "root_correct": true,
+  "type_correct": true
+ },
+ {
+  "incident": "test-07",
+  "fault": "F10",
+  "true_root": "agg-3",
+  "true_type": "cpu_overload",
+  "root_router": "agg-3",
+  "fault_type": "cpu_overload",
+  "confidence": 0.88,
+  "evidence": [
+   "agg-3 logged 'Routing process CPU hog detected'",
+   "agg-3 latency z=66.7 and CPU z=40, anomalous from t=0",
+   "acc-19, acc-03 and acc-11 all sit behind agg-3 and show only SLA latency warnings, starting 20-30 s later",
+   "Traffic stays near normal, which fits RB-02"
+  ],
+  "runbook_id": "RB-02",
+  "next_step": "Ask the agg-3 owner to identify the routing process behind the CPU hog. Check routing table churn, scheduled jobs and recent changes. Consider rate-limiting control-plane traffic. Downstream latency should clear when agg-3 recovers.",
+  "tool_calls": 2,
+  "turns": 2,
+  "root_correct": true,
+  "type_correct": true
+ },
+ {
+  "incident": "test-08",
+  "fault": "F11",
+  "true_root": "agg-5",
+  "true_type": "bgp_misconfig",
+  "root_router": "agg-5",
+  "fault_type": "bgp_misconfig",
+  "confidence": 0.85,
+  "evidence": [
+   "acc-05 and acc-13 both show heavy uplink loss and share uplink agg-5",
+   "agg-5 logged 'BGP neighbor down, hold timer expired' and then 'session re-established'",
+   "Only the access routers behind agg-5 are anomalous, so they are likely victims"
+  ],
+  "runbook_id": "RB-03",
+  "next_step": "Review the last BGP config commit on agg-5 (timers, policy, neighbor addresses) and the peer's logs. After approval, roll back the change and confirm the session stays up for 10 minutes.",
+  "tool_calls": 1,
+  "turns": 2,
+  "root_correct": true,
+  "type_correct": true
+ },
+ {
+  "incident": "test-09",
+  "fault": "F12",
+  "true_root": "agg-8",
+  "true_type": "bgp_misconfig",
+  "root_router": "agg-8",
+  "fault_type": "bgp_misconfig",
+  "confidence": 0.88,
+  "evidence": [
+   "agg-8 logged BGP neighbor down (hold timer expired) and session re-established, with bgp_flaps z=39",
+   "acc-08 and acc-16 share uplink agg-8 and show loss_pct z>1000 with uplink packet loss alarms",
+   "Access routers are victims; this matches RB-03 and RB-04"
+  ],
+  "runbook_id": "RB-03",
+  "next_step": "Review the last BGP configuration commit on agg-8 (timers, policy, neighbor addresses). Roll back after approval, then confirm the session stays up for 10 minutes.",
+  "tool_calls": 1,
+  "turns": 2,
+  "root_correct": true,
+  "type_correct": true
+ }
+]

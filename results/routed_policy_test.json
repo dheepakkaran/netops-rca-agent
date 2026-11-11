@@ -1,0 +1,10 @@
+{
+ "method": "computed from the Sonnet and Opus test ledgers (policy chosen after seeing test; not a separate run)",
+ "escalated": [
+  "test-03",
+  "test-08"
+ ],
+ "root_and_noise_correct": 9,
+ "incidents": 9,
+ "cost_usd": 0.1303
+}

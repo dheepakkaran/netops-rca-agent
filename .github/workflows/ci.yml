@@ -1,0 +1,18 @@
+name: ci
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: unit tests
+        run: uv run pytest -q
+      - name: simulate + detect (file mode, no Kafka/Cassandra)
+        run: |
+          uv run python -m netops.sim
+          mkdir -p ci-out && cp -r results ci-out/committed
+          uv run python -m netops.detect --file | tail -5

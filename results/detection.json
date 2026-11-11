@@ -1,6 +1,6 @@
 {
   "train": {
-    "seconds": 4.6,
+    "seconds": 5.2,
     "final_mse": 0.7493,
     "samples": 20700
   },
@@ -76,8 +76,8 @@
   "optimization": {
     "fp32_kb": 22.8,
     "int8_kb": 9.5,
-    "fp32_score_s": 0.63,
-    "int8_score_s": 1.5,
+    "fp32_score_s": 0.84,
+    "int8_score_s": 1.41,
     "max_score_diff": 38.266
   }
 }

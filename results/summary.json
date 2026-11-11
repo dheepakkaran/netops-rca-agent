@@ -1,0 +1,184 @@
+{
+  "pipeline": {
+    "seconds": 54.2,
+    "raw_rows": 64800,
+    "minute_rows_upserted": 10800,
+    "alarm_rows": 986,
+    "end_to_end_rows_per_s": 1196,
+    "spark_peak_processed_rows_per_s": 3087
+  },
+  "detection": {
+    "train": {
+      "seconds": 5.2,
+      "final_mse": 0.7493,
+      "samples": 20700
+    },
+    "lstm": {
+      "k": 30,
+      "dev": {
+        "faults": 4,
+        "found": 4,
+        "incidents": 5,
+        "false_incidents": 1,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.889,
+        "mean_delay_s": 12.5
+      },
+      "test": {
+        "faults": 8,
+        "found": 8,
+        "incidents": 9,
+        "false_incidents": 1,
+        "precision": 0.889,
+        "recall": 1.0,
+        "f1": 0.941,
+        "mean_delay_s": 13.8
+      }
+    },
+    "lstm_int8": {
+      "k": 30,
+      "dev": {
+        "faults": 4,
+        "found": 4,
+        "incidents": 5,
+        "false_incidents": 1,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.889,
+        "mean_delay_s": 12.5
+      },
+      "test": {
+        "faults": 8,
+        "found": 8,
+        "incidents": 9,
+        "false_incidents": 1,
+        "precision": 0.889,
+        "recall": 1.0,
+        "f1": 0.941,
+        "mean_delay_s": 13.8
+      }
+    },
+    "zscore": {
+      "k": 6,
+      "dev": {
+        "faults": 4,
+        "found": 4,
+        "incidents": 4,
+        "false_incidents": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "mean_delay_s": 12.5
+      },
+      "test": {
+        "faults": 8,
+        "found": 8,
+        "incidents": 15,
+        "false_incidents": 5,
+        "precision": 0.667,
+        "recall": 1.0,
+        "f1": 0.8,
+        "mean_delay_s": 13.8
+      }
+    },
+    "optimization": {
+      "fp32_kb": 22.8,
+      "int8_kb": 9.5,
+      "fp32_score_s": 0.84,
+      "int8_score_s": 1.41,
+      "max_score_diff": 38.266
+    }
+  },
+  "text_mining": {
+    "k": 12,
+    "silhouette": 0.998,
+    "purity": 0.999,
+    "lines": 986
+  },
+  "rca_baselines": {
+    "dev": {
+      "faults": 4,
+      "earliest": 1,
+      "topology_rule": 4,
+      "noise_incidents": 1
+    },
+    "test": {
+      "faults": 8,
+      "earliest": 5,
+      "topology_rule": 6,
+      "noise_incidents": 1
+    }
+  },
+  "agent": {
+    "dev_opus": {
+      "root": 4,
+      "faults": 4,
+      "type": 5,
+      "incidents": 5,
+      "noise_dismissed": 1,
+      "noise": 1,
+      "tool_calls": 13
+    },
+    "test_opus": {
+      "root": 8,
+      "faults": 8,
+      "type": 9,
+      "incidents": 9,
+      "noise_dismissed": 1,
+      "noise": 1,
+      "tool_calls": 20
+    },
+    "test_sonnet": {
+      "root": 8,
+      "faults": 8,
+      "type": 9,
+      "incidents": 9,
+      "noise_dismissed": 1,
+      "noise": 1,
+      "tool_calls": 18
+    }
+  },
+  "cost": {
+    "labels": {
+      "calls": 1,
+      "usd": 0.0007,
+      "cache_read_tokens": 0,
+      "prompt_tokens": 1809
+    },
+    "dev_opus": {
+      "calls": 12,
+      "usd": 0.1631,
+      "cache_read_tokens": 9834,
+      "prompt_tokens": 30549
+    },
+    "test_opus": {
+      "calls": 19,
+      "usd": 0.2234,
+      "cache_read_tokens": 16986,
+      "prompt_tokens": 41647
+    },
+    "test_sonnet": {
+      "calls": 18,
+      "usd": 0.0887,
+      "cache_read_tokens": 15198,
+      "prompt_tokens": 37929
+    },
+    "total": {
+      "calls": 50,
+      "usd": 0.4759,
+      "cache_read_tokens": 42018,
+      "prompt_tokens": 111934
+    }
+  },
+  "routed_policy": {
+    "method": "computed from the Sonnet and Opus test ledgers (policy chosen after seeing test; not a separate run)",
+    "escalated": [
+      "test-03",
+      "test-08"
+    ],
+    "root_and_noise_correct": 9,
+    "incidents": 9,
+    "cost_usd": 0.1303
+  }
+}

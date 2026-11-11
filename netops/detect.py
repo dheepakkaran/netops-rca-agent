@@ -181,4 +181,10 @@ def main(X=None):
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    if "--file" in sys.argv:            # CI: no Kafka/Cassandra, same matrix from data/events.jsonl
+        from .store import load_matrix_file
+        t = json.loads(Path("data/truth.json").read_text())
+        main(load_matrix_file("data/events.jsonl", sorted(n["id"] for n in t["topology"]["nodes"])))
+    else:
+        main()

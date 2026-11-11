@@ -46,3 +46,15 @@ def load_alarms(s, routers: list[str]) -> list[dict]:
     for r in routers:
         out += [{"router": r, "step": row.step, "msg": row.msg} for row in s.execute(q, [r])]
     return sorted(out, key=lambda a: (a["step"], a["router"]))
+
+
+def load_matrix_file(path: str, routers: list[str]) -> np.ndarray:
+    """File mode (CI and tests): the same matrix built from data/events.jsonl."""
+    import json
+    X = np.full((len(routers), STEPS, len(KPIS)), np.nan)
+    idx = {r: i for i, r in enumerate(routers)}
+    with open(path) as f:
+        for line in f:
+            e = json.loads(line)
+            X[idx[e["router"]], e["step"]] = [e[k] for k in KPIS]
+    return X

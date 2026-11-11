@@ -192,10 +192,24 @@ def diagnose(client, ev: Evidence, inc: dict, model: str, run: str) -> dict:
     return {"root_router": "unanswered", "fault_type": "transient_noise", "confidence": 0, "evidence": [], "runbook_id": "", "next_step": "", "tool_calls": calls, "turns": MAX_TURNS}
 
 
+def decide(client, ev, inc, model, split, g):
+    """Routing for the decision. 'routed' = Sonnet first; escalate to Opus only
+    on evidence: Sonnet disagrees with the deterministic topology rule, or
+    reports confidence < 0.6. Opus / Sonnet alone are kept for comparisons."""
+    if model != "routed":
+        return diagnose(client, ev, inc, model, f"{split}-{model.split('-')[1]}-{inc['id']}")
+    from .baselines import topology_rule
+    d = diagnose(client, ev, inc, SONNET, f"{split}-routed-sonnet-{inc['id']}")
+    rule = topology_rule(inc, g)
+    if d["confidence"] < 0.6 or (d["root_router"] != "none" and d["root_router"] != rule):
+        d = {**diagnose(client, ev, inc, OPUS, f"{split}-routed-opus-{inc['id']}"), "escalated": True, "sonnet_said": d["root_router"], "rule_said": rule}
+    return d
+
+
 def main():
     load_env()
     split = sys.argv[1] if len(sys.argv) > 1 else "dev"
-    model = {"opus": OPUS, "sonnet": SONNET}[sys.argv[2] if len(sys.argv) > 2 else "opus"]
+    model = {"opus": OPUS, "sonnet": SONNET, "routed": "routed"}[sys.argv[2] if len(sys.argv) > 2 else "routed"]
     client = anthropic.Anthropic()
     from .store import load_alarms, load_matrix, session
     incs, t, g = split_incidents(split)
@@ -208,13 +222,14 @@ def main():
     ev = Evidence(X, alarms, labels, cluster_of, g, routers)
     out = []
     for inc in incs:
-        d = diagnose(client, ev, inc, model, f"{split}-{model.split('-')[1]}-{inc['id']}")
+        d = decide(client, ev, inc, model, split, g)
         ok_root = (d["root_router"] == inc["true_root"]) if inc["fault"] else (d["root_router"] == "none")
         ok_type = (d["fault_type"] == inc["true_type"]) if inc["fault"] else (d["fault_type"] == "transient_noise")
         out.append({"incident": inc["id"], "fault": inc["fault"], "true_root": inc["true_root"], "true_type": inc["true_type"], **d,
                     "root_correct": ok_root, "type_correct": ok_type})
         print(f"  {inc['id']} true={inc['true_root'] or 'noise':<7} → {d['root_router']:<7} {d['fault_type']:<15} {'✓' if ok_root else '✗'} type {'✓' if ok_type else '✗'} tools={d['tool_calls']} · spent ${spent():.3f}")
-    Path(f"results/rca_{split}_{model.split('-')[1]}.json").write_text(json.dumps(out, indent=1))
+    name = model if model == "routed" else model.split("-")[1]
+    Path(f"results/rca_{split}_{name}.json").write_text(json.dumps(out, indent=1))
 
 
 if __name__ == "__main__":
