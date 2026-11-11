@@ -4,498 +4,342 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>netops-rca-agent</title>
-<meta name="description" content="Router telemetry through Kafka, Spark and Cassandra; a PyTorch LSTM flags anomalies; a Claude agent with read-only tools and runbook search names the root-cause router. Synthetic network, measured results.">
+<meta name="description" content="Router telemetry through Kafka, Spark and Cassandra; a PyTorch LSTM flags anomalies; a Claude agent names the root-cause router. Synthetic network, measured results.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#faf9f5; --surface:#ffffff; --surface2:#f3f1ea; --ink:#1f1e1d; --ink2:#3d3b37; --muted:#6b6862; --line:#e4dfd3;
-  --accent:#c2603f; --accent-ink:#ffffff; --accent-soft:#f6e4da;
-  --green:#1a7f37; --green-soft:#dafbe1; --purple:#8250df; --red:#cf222e;
-  --code:#f6f4ee; --term:#1f1e1d; --term-ink:#ece9e1; --term-muted:#a8a39a;
-  --opus:#c2603f; --sonnet:#b7791f; --haiku:#4d7c5b; --bot:#ffffff; --face:#2b2a28;
-  --shadow:0 1px 0 rgba(31,30,29,.04),0 8px 24px -12px rgba(31,30,29,.18);
+  --bg:#f7f6f3; --panel:#ffffff; --ink:#191919; --ink2:#4a4a48; --muted:#8a8984; --line:#e3e1db;
+  --accent:#264f78; --accent-soft:#e7eef6; --good:#1f7a4d; --good-soft:#e3f2ea; --bad:#b3261e; --bad-soft:#f8e6e4;
+  --btn:#191919; --btn-ink:#ffffff; --bar:#191919;
 }
 @media (prefers-color-scheme: dark){
   :root{
-    --bg:#0d1117; --surface:#161b22; --surface2:#1c2128; --ink:#e6edf3; --ink2:#c9d1d9; --muted:#8b949e; --line:#30363d;
-    --accent:#e0896a; --accent-ink:#0d1117; --accent-soft:#3a2419;
-    --green:#3fb950; --green-soft:#12261a; --purple:#a371f7; --red:#f85149;
-    --code:#161b22; --term:#010409; --term-ink:#e6edf3; --term-muted:#8b949e;
-    --opus:#e0896a; --sonnet:#d9a441; --haiku:#6fb383; --bot:#21262d; --face:#0d1117;
-    --shadow:0 1px 0 rgba(0,0,0,.3),0 10px 28px -14px rgba(0,0,0,.7);
+    --bg:#131313; --panel:#1b1b1b; --ink:#ededeb; --ink2:#bdbcb8; --muted:#85847f; --line:#2c2c2a;
+    --accent:#8db4dc; --accent-soft:#1c2733; --good:#5cc08a; --good-soft:#15251c; --bad:#ef8a80; --bad-soft:#2b1715;
+    --btn:#ededeb; --btn-ink:#131313; --bar:#ededeb;
   }
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline;text-underline-offset:3px}
-.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
-.mono,code,pre,.diff,.term{font-family:"JetBrains Mono",ui-monospace,monospace;font-variant-ligatures:none;font-feature-settings:"liga" 0,"calt" 0}
-.diff,pre{tab-size:4}
-code{font-size:.88em;background:var(--code);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+*{box-sizing:border-box;margin:0}
+html{scroll-snap-type:y proximity;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:300 18px/1.55 Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-variant-ligatures:none}
 
-.repohead{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
-.repohead .wrap{display:flex;align-items:center;gap:14px;height:54px}
-.crumb{font-size:15.5px;display:flex;align-items:center;gap:8px;white-space:nowrap;color:var(--ink);min-width:0}
-.crumb b{font-weight:600}
-.crumb svg{flex:none}
-.pill{font:500 11.5px Inter;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted)}
-.ghbtn{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:500;border:1px solid var(--line);background:var(--surface2);color:var(--ink);padding:5px 12px;border-radius:6px;white-space:nowrap}
-.ghbtn:hover{text-decoration:none;border-color:var(--muted)}
-.tabs{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:54px;z-index:19}
-.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
-.tabs a{color:var(--ink2);font-size:14px;padding:10px 12px;border-bottom:2px solid transparent;white-space:nowrap}
-.tabs a:hover{text-decoration:none;border-color:var(--line)}
-.tabs a.on{border-color:var(--accent);font-weight:600;color:var(--ink)}
-section,header{scroll-margin-top:110px}
+/* chrome */
+.progress{position:fixed;inset:0 0 auto 0;height:3px;background:transparent;z-index:30}
+.progress i{display:block;height:100%;width:0;background:var(--bar);transition:width .25s ease}
+.brand{position:fixed;top:22px;left:28px;z-index:25;font:500 14px Inter;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.brand span{color:var(--muted);font-weight:400}
+.toplinks{position:fixed;top:18px;right:24px;z-index:25;display:flex;gap:8px}
+.toplinks a{font:500 13.5px Inter;text-decoration:none;padding:7px 12px;border-radius:6px;color:var(--ink2)}
+.toplinks a:hover{background:var(--panel)}
+.nav{position:fixed;right:24px;bottom:24px;z-index:25;display:flex;border-radius:6px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.nav button{all:unset;cursor:pointer;width:38px;height:36px;display:grid;place-items:center;background:var(--btn);color:var(--btn-ink)}
+.nav button + button{border-left:1px solid color-mix(in srgb,var(--btn-ink) 25%,transparent)}
+.nav button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.counter{position:fixed;left:28px;bottom:28px;z-index:25;font:400 13px "JetBrains Mono",monospace;color:var(--muted)}
 
-.hero{padding:68px 0 40px}
-.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
-.kicker{font:500 12px/1 "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-h1{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:clamp(36px,5.2vw,58px);line-height:1.04;letter-spacing:-.02em;margin:18px 0 20px}
-.lede{font-size:18.5px;line-height:1.6;color:var(--ink2);margin:0 0 26px}
-.btns{display:flex;gap:10px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;font-weight:600;font-size:14.5px;border:1px solid var(--line);color:var(--ink);background:var(--surface)}
-.btn:hover{text-decoration:none;border-color:var(--muted)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+/* screens */
+.screen{min-height:100svh;display:flex;align-items:center;scroll-snap-align:start;padding:96px 28px 88px}
+.inner{width:100%;max-width:760px;margin:0 auto}
+.inner.wide{max-width:960px}
+.step{display:flex;align-items:center;gap:10px;font:400 15px Inter;color:var(--accent);margin-bottom:18px}
+.step b{font-weight:500}
+.step svg{flex:none}
+h1,h2{font-weight:400;letter-spacing:-.025em;color:var(--ink)}
+h1{font-size:clamp(40px,6.4vw,72px);line-height:1.05}
+h2{font-size:clamp(28px,4vw,44px);line-height:1.15}
+.lead{font-size:clamp(18px,2.1vw,22px);color:var(--ink2);margin-top:20px;max-width:640px}
+.small{font-size:15px;color:var(--muted);margin-top:18px;max-width:640px}
+.ok{display:inline-flex;align-items:center;gap:12px;margin-top:34px}
+.btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font:500 17px Inter;padding:11px 18px;border-radius:6px;background:var(--btn);color:var(--btn-ink);transition:opacity .15s}
+.btn:hover{opacity:.88}
+.btn:focus-visible,.choice:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.hint{font-size:13px;color:var(--muted)}
+.hint b{font-weight:600}
 
-.term{background:var(--term);color:var(--term-ink);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line);min-width:0}
-.term .bar{display:flex;gap:7px;padding:11px 14px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07)}
-.term .bar i{width:11px;height:11px;border-radius:50%;background:#5c5a55;display:block}
-.term .bar span{margin-left:8px;font:12px "JetBrains Mono",monospace;color:var(--term-muted)}
-.term pre{margin:0;padding:16px 18px 18px;font-size:12.6px;line-height:1.75;min-height:330px;white-space:pre-wrap;word-break:break-word}
-.t-muted{color:var(--term-muted)} .t-ok{color:#56d364} .t-acc{color:#f0a283} .t-son{color:#e3b341} .t-hai{color:#7ee2a8} .t-pr{color:#d2a8ff}
-.cursor{display:inline-block;width:8px;height:15px;background:var(--term-ink);vertical-align:-2px;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
+/* choices */
+.choices{display:grid;gap:10px;margin-top:30px;max-width:520px}
+.choice{all:unset;cursor:pointer;display:flex;align-items:center;gap:14px;padding:11px 14px;border-radius:6px;background:var(--accent-soft);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 35%,transparent);color:var(--ink);font-size:18px;transition:background .15s,box-shadow .15s}
+.choice:hover{box-shadow:inset 0 0 0 1px var(--accent)}
+.key{flex:none;width:26px;height:26px;display:grid;place-items:center;border-radius:4px;font:500 13px Inter;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 45%,transparent);background:var(--panel);color:var(--accent)}
+.choice .note{margin-left:auto;font-size:13px;color:var(--muted)}
+.choice.right{background:var(--good-soft);box-shadow:inset 0 0 0 2px var(--good)}
+.choice.right .key{background:var(--good);color:#fff;box-shadow:none}
+.choice.wrong{background:var(--bad-soft);box-shadow:inset 0 0 0 1px var(--bad)}
+.choice.dim{opacity:.45}
+.reveal{margin-top:22px;font-size:17px;color:var(--ink2);max-width:600px;opacity:0;transform:translateY(6px);transition:all .35s ease;min-height:56px}
+.reveal.on{opacity:1;transform:none}
 
-.numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;box-shadow:var(--shadow);min-width:0}
-.num .v{font-family:"Source Serif 4",Georgia,serif;font-size:38px;font-weight:600;letter-spacing:-.02em;line-height:1.05}
-.num .v small{font-size:17px;color:var(--muted);font-weight:500;font-family:Inter}
-.num .l{font-size:14px;color:var(--ink2);margin-top:8px;line-height:1.45}
-.num .k{font:500 11px "JetBrains Mono",monospace;color:var(--muted);margin-top:10px;text-transform:uppercase;letter-spacing:.05em}
-.fine{font-size:13px;color:var(--muted);margin:14px 0 0;line-height:1.55}
+/* rows (results) */
+.rows{margin-top:34px;display:grid;gap:14px}
+.row{display:grid;grid-template-columns:220px 1fr 92px;align-items:center;gap:18px}
+.row .name{font-size:16px;color:var(--ink)}
+.row .name small{display:block;font-size:13px;color:var(--muted)}
+.track{height:10px;border-radius:999px;background:var(--line);overflow:hidden}
+.track i{display:block;height:100%;width:0;border-radius:999px;background:var(--muted);transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.row.me .track i{background:var(--ink)}
+.row .val{font:500 17px "JetBrains Mono",monospace;text-align:right}
+.big{font-size:clamp(64px,11vw,128px);font-weight:300;letter-spacing:-.05em;line-height:1}
+.big small{font-size:.32em;color:var(--muted);letter-spacing:-.01em;margin-left:6px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:30px}
+.pair .lbl{font-size:15px;color:var(--muted);margin-top:8px}
 
-section{padding:76px 0;border-top:1px solid var(--line)}
-.eyebrow{font:500 12px "JetBrains Mono",monospace;color:var(--muted);letter-spacing:.05em;margin-bottom:12px}
-h2{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:clamp(28px,3.4vw,38px);line-height:1.15;letter-spacing:-.015em;margin:0 0 14px;max-width:800px}
-h3{font-size:16.5px;font-weight:600;margin:0 0 6px}
-p{margin:0 0 14px;color:var(--ink2)}
-.narrow{max-width:720px}
+/* list steps */
+.list{margin-top:30px;display:grid;gap:0;border-top:1px solid var(--line)}
+.list div{display:grid;grid-template-columns:44px 170px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px;align-items:baseline}
+.list .n{font:400 13px "JetBrains Mono",monospace;color:var(--muted)}
+.list .t{font-weight:500}
+.list .d{color:var(--ink2)}
 
-.stage{margin-top:30px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 14px 14px;box-shadow:var(--shadow);overflow:hidden}
-.stage svg{width:100%;height:auto;display:block}
-.bot .body{fill:var(--bot);stroke:var(--ink);stroke-width:2;transition:stroke .3s}
-.bot .face{fill:var(--face)}
-.bot .eye{fill:#f5f3ee;transform-box:fill-box;transform-origin:center;animation:look 5s ease-in-out infinite}
-.bot .mouth{stroke:#f5f3ee;stroke-width:2.2;stroke-linecap:round;fill:none}
-.bot .ant{stroke:var(--ink);stroke-width:2}
-.bot .feet{fill:var(--ink)}
-.bot .bob{animation:bob 3.2s ease-in-out infinite}
-.bot.b2 .bob{animation-delay:-.6s} .bot.b3 .bob{animation-delay:-1.2s} .bot.b4 .bob{animation-delay:-1.8s} .bot.b5 .bob{animation-delay:-2.4s}
-.bot.b2 .eye{animation-delay:-1s} .bot.b3 .eye{animation-delay:-2s} .bot.b4 .eye{animation-delay:-3s} .bot.b5 .eye{animation-delay:-4s}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-@keyframes look{0%,44%,48%,100%{transform:scaleY(1)}46%{transform:scaleY(.12)}}
-.bot.active .body{stroke:var(--accent);stroke-width:3}
-.glow{opacity:0;transition:opacity .3s}
-.bot.active .glow{opacity:1}
-.stage .lab{font:600 13.5px Inter;fill:var(--ink)}
-.stage .sub{font:500 11.5px "JetBrains Mono",monospace;fill:var(--muted)}
-.stage .rail{stroke:var(--line);stroke-width:2;stroke-dasharray:4 6}
-.agentgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:16px}
-.agentgrid .card{padding:16px;box-shadow:none}
-.agentgrid p{font-size:13.8px;margin:0;line-height:1.5}
-.model{display:inline-block;font:600 11px "JetBrains Mono",monospace;padding:2px 7px;border-radius:999px;margin:2px 0 8px;border:1px solid}
-.m-opus{color:var(--opus);border-color:var(--opus)} .m-son{color:var(--sonnet);border-color:var(--sonnet)} .m-hai{color:var(--haiku);border-color:var(--haiku)}
-
-.pr{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);margin-top:28px}
-.pr .top{padding:18px 20px;border-bottom:1px solid var(--line)}
-.pr .title{font-size:20px;font-weight:600}
-.pr .title span{color:var(--muted);font-weight:400}
-.badge{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;border-radius:999px;padding:4px 11px;color:#fff;background:var(--purple)}
-.label{display:inline-block;font:600 11.5px Inter;border-radius:999px;padding:2px 9px;background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)}
-.pr .meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:10px;font-size:13.5px;color:var(--muted)}
-.pr .cols{display:grid;grid-template-columns:1fr 1fr}
-.pr .col{padding:16px 20px;min-width:0}
-.pr .col + .col{border-left:1px solid var(--line)}
-.check{display:flex;gap:10px;align-items:baseline;font-size:14px;padding:7px 0;border-bottom:1px dashed var(--line);flex-wrap:wrap}
-.check:last-child{border-bottom:0}
-.check .ok{color:var(--green);font-weight:700}
-.check .d{color:var(--muted);font:12px "JetBrains Mono",monospace}
-.diff{font:12.5px/1.65 "JetBrains Mono",monospace;background:var(--code);border-top:1px solid var(--line);overflow-x:auto}
-.diff .h{padding:6px 16px;color:var(--muted);background:var(--surface2);border-bottom:1px solid var(--line)}
-.diff div{padding:0 16px;white-space:pre}
-.diff .a{background:var(--green-soft)} .diff .a::before{content:"+ ";color:var(--green)}
-.diff .c::before{content:"  "}
-.review{display:flex;gap:12px;padding:16px 20px;border-top:1px solid var(--line);align-items:flex-start}
-.review svg{flex:none}
-.review p{margin:0;font-size:14px}
-.review b{color:var(--ink)}
-
-.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
-.feat .card{box-shadow:none}
-.feat p{font-size:14.5px;margin:0}
-.feat .ic{font:600 12px "JetBrains Mono",monospace;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:10px}
-
-table{width:100%;border-collapse:collapse;font-size:14.5px}
-th,td{text-align:left;padding:11px 12px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
-tbody tr:last-child td{border-bottom:0}
-th{font:600 11.5px Inter;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-family:"JetBrains Mono",monospace;font-size:13.5px}
-tr.best td{background:var(--accent-soft)}
-tr.best td:first-child{padding-left:8px}
-.tablecard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px 18px 4px;overflow-x:auto}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
-.chart{width:100%;height:auto;display:block}
-.chart .lab{fill:var(--ink);font:500 12.5px Inter}
-.chart .val{fill:var(--ink);font:500 12px "JetBrains Mono",monospace}
-.bar{transition:width 1s cubic-bezier(.25,.8,.25,1)}
-figcaption{font-size:13px;color:var(--muted);margin-top:10px}
-
-.vs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
-.vs .big{font-family:"Source Serif 4",Georgia,serif;font-size:30px;font-weight:600;margin:6px 0 2px}
-.vs ul{margin:12px 0 0;padding-left:18px;color:var(--ink2);font-size:14.5px}
-.vs li{margin-bottom:6px}
-.tag{font:600 10.5px "JetBrains Mono",monospace;border-radius:4px;padding:1px 6px;margin-left:4px;vertical-align:1px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
-.tag.m{color:var(--green);border-color:var(--green)} .tag.e{color:var(--sonnet);border-color:var(--sonnet)}
-.fit{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
-.fit .card{box-shadow:none}
-.fit .yes{border-top:3px solid var(--green)} .fit .no{border-top:3px solid var(--muted)}
-.fit ul{margin:6px 0 0;padding-left:18px;font-size:14.5px;color:var(--ink2)}
-
-.fails{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
-.fails .card{box-shadow:none;border-left:3px solid var(--red)}
-.fails p{font-size:14.5px;margin:0}
-
-pre.cmd{background:var(--term);color:var(--term-ink);border-radius:12px;padding:18px 20px;overflow:auto;font-size:13px;line-height:1.8;margin:0;border:1px solid var(--line)}
-pre.cmd .c{color:var(--term-muted)}
-
-footer{padding:36px 0 60px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
-
-.fade{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
-.fade.in{opacity:1;transform:none}
-
-@media (max-width:900px){
-  .hero .grid,.two,.vs,.fit,.fails,.pr .cols{grid-template-columns:1fr}
-  .pr .col + .col{border-left:0;border-top:1px solid var(--line)}
-  .numbers,.feat,.agentgrid{grid-template-columns:1fr 1fr}
-  .hero{padding:40px 0 28px}
-  section{padding:56px 0}
-  .pill,.ghbtn .hide{display:none}
-}
-@media (max-width:560px){.numbers,.feat,.agentgrid{grid-template-columns:1fr}.term pre{min-height:0;font-size:11.5px}.crumb span:first-of-type{display:none}}
-.diff,.diff *,.term,.term *,pre,pre *,code{font-variant-ligatures:none!important;font-feature-settings:"liga" 0,"calt" 0!important}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.fade{opacity:1;transform:none}}
-
-.topo{width:100%;height:auto;display:block}
-.topo .ln{stroke:var(--line);stroke-width:1.4}
-.topo .ln.hot{stroke:var(--accent);stroke-width:2.2}
-.topo .nd{fill:var(--surface);stroke:var(--muted);stroke-width:1.4;transition:all .4s}
-.topo .nd.victim{fill:var(--red-soft,#ffebe9);stroke:var(--red);stroke-width:2.2}
-.topo .nd.root{fill:var(--accent-soft);stroke:var(--accent);stroke-width:3}
-.topo .tl{font:500 9.5px "JetBrains Mono",monospace;fill:var(--muted)}
-.topo .tier{font:600 11px Inter;fill:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.topo .bubble{opacity:0;transition:opacity .4s}
+/* topology */
+.topo{width:100%;height:auto;display:block;margin-top:26px}
+.topo .ln{stroke:var(--line);stroke-width:1.2}
+.topo .ln.hot{stroke:var(--ink);stroke-width:1.8}
+.topo .nd{fill:var(--bg);stroke:var(--muted);stroke-width:1.2;transition:all .35s}
+.topo .nd.victim{fill:var(--bad-soft);stroke:var(--bad);stroke-width:2}
+.topo .nd.root{fill:var(--ink);stroke:var(--ink);stroke-width:2}
+.topo .tl{font:400 9px "JetBrains Mono",monospace;fill:var(--muted)}
+.topo .tier{font:500 10.5px Inter;fill:var(--muted);letter-spacing:.08em}
+.topo .bubble{opacity:0;transition:opacity .35s}
 .topo .bubble.on{opacity:1}
-.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:10px}
-.legend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px;border:2px solid}
-.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:24px}
-.flow .card{box-shadow:none;padding:14px}
-.flow .card b{display:block;font-size:14.5px;margin-bottom:4px}
-.flow .card span{font-size:13px;color:var(--muted);line-height:1.45;display:block}
-.flow .card .ic{font:600 11px "JetBrains Mono",monospace;color:var(--accent);background:var(--accent-soft);border-radius:5px;padding:2px 7px;display:inline-block;margin-bottom:8px}
-.diag{display:grid;grid-template-columns:1fr 1fr;gap:0}
-.diag .col{padding:16px 20px}
-.diag .col + .col{border-left:1px solid var(--line)}
-.kv{font:12.5px/1.7 "JetBrains Mono",monospace;background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;white-space:pre-wrap;color:var(--ink2);overflow-x:auto}
-.ok{color:var(--green);font-weight:700}
-@media (max-width:900px){.flow{grid-template-columns:1fr 1fr}.diag{grid-template-columns:1fr}.diag .col + .col{border-left:0;border-top:1px solid var(--line)}}
-@media (prefers-color-scheme: dark){:root{--red-soft:#2d1214}}
-:root{--red-soft:#ffebe9}
+.caption{font:400 14px "JetBrains Mono",monospace;color:var(--ink2);margin-top:12px;min-height:22px}
+
+/* agents */
+.agents{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.agent{background:var(--panel);border-radius:8px;padding:20px;box-shadow:inset 0 0 0 1px var(--line)}
+.agent svg{display:block;margin-bottom:14px}
+.agent .m{font:500 12px "JetBrains Mono",monospace;color:var(--muted)}
+.agent h3{font-weight:500;font-size:18px;margin:4px 0 6px;letter-spacing:-.01em}
+.agent p{font-size:15px;color:var(--ink2)}
+.blink{transform-box:fill-box;transform-origin:center;animation:blink 5s ease-in-out infinite}
+@keyframes blink{0%,45%,49%,100%{transform:scaleY(1)}47%{transform:scaleY(.1)}}
+
+.limits{margin-top:30px;display:grid;gap:12px}
+.limits div{display:flex;gap:14px;font-size:17px;color:var(--ink2)}
+.limits .k{flex:none;font:500 13px "JetBrains Mono",monospace;color:var(--muted);padding-top:3px;width:22px}
+pre{margin-top:28px;background:var(--panel);border-radius:8px;padding:20px 22px;box-shadow:inset 0 0 0 1px var(--line);font:400 13.5px/1.85 "JetBrains Mono",monospace;font-variant-ligatures:none;color:var(--ink);overflow-x:auto}
+pre .c{color:var(--muted)}
+.foot{margin-top:44px;font-size:13px;color:var(--muted);max-width:640px}
+
+.in{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.screen.seen .in{opacity:1;transform:none}
+.screen.seen .in:nth-child(2){transition-delay:.07s} .screen.seen .in:nth-child(3){transition-delay:.14s} .screen.seen .in:nth-child(4){transition-delay:.21s} .screen.seen .in:nth-child(5){transition-delay:.28s}
+
+@media (max-width:760px){
+  body{font-size:17px}
+  .screen{padding:84px 18px 92px}
+  .brand{left:18px} .brand span{display:none} .toplinks{right:8px} .toplinks a.hide{display:none}
+  .choice{font-size:17px} .choice .note{font-size:12px;text-align:right;max-width:46%}
+  .counter{left:18px} .nav{right:16px;bottom:18px}
+  .row{grid-template-columns:1fr 70px;gap:8px 12px} .row .track{grid-column:1 / -1;order:3}
+  .pair,.agents{grid-template-columns:1fr}
+  .list div{grid-template-columns:34px 1fr} .list .d{grid-column:2}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.in{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div class="repohead"><div class="wrap">
-  <div class="crumb"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.71 1.71.75.75 0 0 1-1.06 1.06A2.49 2.49 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.71A2.49 2.49 0 0 1 4.5 9h8Z"/></svg><span>dheepakkaran</span><span style="color:var(--muted)">/</span><b>netops-rca-agent</b><span class="pill">Public</span></div>
-  <a class="ghbtn" href="https://github.com/dheepakkaran/netops-rca-agent"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg><span class="hide">View on</span> GitHub</a>
-</div></div>
-<nav class="tabs"><div class="wrap">
-  <a class="on" href="#top">Overview</a><a href="#incident">An incident</a><a href="#pipeline">Pipeline</a><a href="#detect">Detection</a><a href="#rca">Root cause</a><a href="#routing">Routing</a><a href="#broke">What broke</a><a href="#run">Run it</a>
-</div></nav>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+<a class="brand" href="#s1">netops-rca-agent <span>· a project by Dheepak Karan</span></a>
+<nav class="toplinks" aria-label="Links"><a class="hide" href="https://github.com/dheepakkaran/netops-rca-agent/blob/main/RESULTS.md">Results</a><a class="hide" href="https://github.com/dheepakkaran/netops-rca-agent/blob/main/FAILURES.md">What broke</a><a href="https://github.com/dheepakkaran/netops-rca-agent">GitHub ↗</a></nav>
+<div class="counter" id="counter" aria-hidden="true">1 / 10</div>
+<div class="nav"><button id="up" aria-label="Previous screen"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9l5-5 5 5"/></svg></button><button id="down" aria-label="Next screen"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5l5 5 5-5"/></svg></button></div>
 
-<header class="hero" id="top"><div class="wrap">
-  <div class="grid">
-    <div>
-      <div class="kicker">Network operations · Kafka · Spark · PyTorch · Claude API</div>
-      <h1>Thousands of alarms. One router to fix.</h1>
-      <p class="lede">Router telemetry streams through Kafka, Spark and Cassandra. A PyTorch forecaster flags what is not normal and groups it into incidents. An agent reads the topology, the alarm lines and the runbooks, then names the router that caused it, or says it was noise. It recommends; it never touches the network.</p>
-      <div class="btns">
-        <a class="btn primary" href="https://github.com/dheepakkaran/netops-rca-agent">Source code</a>
-        <a class="btn" href="https://github.com/dheepakkaran/netops-rca-agent/blob/main/RESULTS.md">All results</a>
-        <a class="btn" href="https://github.com/dheepakkaran/netops-rca-agent/blob/main/FAILURES.md">What broke</a>
-      </div>
-    </div>
-    <div class="term" aria-label="A replay of the test run">
-      <div class="bar"><i></i><i></i><i></i><span>~/netops-rca-agent · test set, scored once</span></div>
-      <pre id="termbody"></pre>
-    </div>
+<main>
+<section class="screen" id="s1"><div class="inner">
+  <h1 class="in">Thousands of alarms.<br>One router to fix.</h1>
+  <p class="lead in">An agent that reads network telemetry, finds what is not normal and names the router that caused it, or says it was noise. It recommends. It never touches the network.</p>
+  <div class="ok in"><button class="btn" data-next>Start <span aria-hidden="true">→</span></button><span class="hint">press <b>Enter ↵</b></span></div>
+  <p class="small in">Kafka · Spark · Cassandra · PyTorch · Claude API · synthetic network of 30 routers</p>
+</div></section>
+
+<section class="screen" id="s2"><div class="inner">
+  <div class="step in"><b>1</b> <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M8 0l6 5-6 5V6H0V4h8z"/></svg> A real incident from the test set</div>
+  <h2 class="in">Three access routers start losing packets in the same second. Which router is broken?</h2>
+  <div class="choices in" id="quiz" role="group" aria-label="Pick the root-cause router">
+    <button class="choice" data-k="a"><span class="key">A</span>acc-02<span class="note">loss ↑ · first seen</span></button>
+    <button class="choice" data-k="b"><span class="key">B</span>acc-10<span class="note">loss ↑</span></button>
+    <button class="choice" data-k="c"><span class="key">C</span>acc-18<span class="note">loss ↑</span></button>
+    <button class="choice" data-k="d"><span class="key">D</span>agg-2<span class="note">their shared uplink · KPIs look calm</span></button>
   </div>
-</div></header>
+  <p class="reveal" id="quiz-out" aria-live="polite"></p>
+</div></section>
 
-<div class="wrap">
-  <div class="numbers">
-    <div class="card num fade"><div class="v">8<small>/8</small></div><div class="l">root-cause routers named correctly on test, plus the one noise incident dismissed. Topology rule: 6/8.</div><div class="k">measured · synthetic network</div></div>
-    <div class="card num fade"><div class="v">0.94</div><div class="l">F1 for the LSTM forecaster finding faults: 8/8 found, 1 false incident. Rolling z-score: 0.80, 5 false.</div><div class="k">measured · test</div></div>
-    <div class="card num fade"><div class="v">60<small>%</small></div><div class="l">cheaper root-cause decisions on Sonnet than on Opus, with the same 9/9 result.</div><div class="k">measured · test</div></div>
-    <div class="card num fade"><div class="v">$0.48</div><div class="l">for every model call in the project, development and both test runs included (50 calls).</div><div class="k">ledger</div></div>
+<section class="screen" id="s3"><div class="inner wide">
+  <div class="step in"><b>2</b> <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M8 0l6 5-6 5V6H0V4h8z"/></svg> How the agent got there</div>
+  <h2 class="in">The victims share one uplink. That uplink's log says why.</h2>
+  <svg id="topo" class="topo in" viewBox="0 0 1000 300" role="img" aria-label="Router tree: 2 core, 8 aggregation, 20 access routers. Three access routers under agg-2 are flagged; agg-2 logs BGP sessions going down; the agent marks agg-2 as the root cause."></svg>
+  <p class="caption in" id="topo-cap" aria-live="polite"></p>
+</div></section>
+
+<section class="screen" id="s4"><div class="inner">
+  <div class="step in"><b>3</b> <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M8 0l6 5-6 5V6H0V4h8z"/></svg> The pipeline</div>
+  <h2 class="in">Six steps from a raw metric to a diagnosis.</h2>
+  <div class="list in">
+    <div><span class="n">01</span><span class="t">Simulate</span><span class="d">30 routers, 5 metrics every 10 s, 12 planted faults, 6 decoys</span></div>
+    <div><span class="n">02</span><span class="t">Kafka</span><span class="d">65,786 messages on two topics, keyed by router</span></div>
+    <div><span class="n">03</span><span class="t">Spark Streaming</span><span class="d">parse, 1-minute features, idempotent writes</span></div>
+    <div><span class="n">04</span><span class="t">Cassandra</span><span class="d">64,800 metric rows, 10,800 minute rows, 986 alarm lines</span></div>
+    <div><span class="n">05</span><span class="t">PyTorch LSTM</span><span class="d">forecasts normal behaviour; a large miss is an anomaly</span></div>
+    <div><span class="n">06</span><span class="t">Claude agent</span><span class="d">topology, alarm text and runbooks → root router, fault type, next step</span></div>
   </div>
-  <p class="fine">All data is synthetic and seeded: 30 routers in a tree, 6 hours at 10-second resolution, 12 planted faults (4 for development, 8 for test) and 6 decoy spikes. Routers report with a 0–20 s lag, and one fault type is quiet at its own root, so neither "earliest" nor "loudest" is a safe answer. Not real network data; see the limits below.</p>
-</div>
+  <p class="small in">Kafka and Cassandra run from their releases on Java 17, without Docker or admin rights.</p>
+</div></section>
 
-<section id="incident" style="margin-top:56px">
-  <div class="wrap">
-    <div class="eyebrow">01 · ONE INCIDENT, START TO FINISH</div>
-    <h2>Three access routers start losing packets in the same second. None of them is the problem.</h2>
-    <p class="narrow">Test incident 3 (fault F07). The detector flagged acc-02, acc-10 and acc-18. Their shared uplink, agg-2, looked calm in every KPI, so the topology rule and the "earliest anomaly" rule both blamed an access router. The agent checked agg-2's alarm lines.</p>
-    <div class="stage fade" style="padding:18px 14px 10px">
-      <svg id="topo" class="topo" viewBox="0 0 1000 300" role="img" aria-label="Router tree: 2 core, 8 aggregation, 20 access. Three access routers under agg-2 turn red; agg-2 shows BGP down alarms; the agent marks agg-2 as the root cause."></svg>
-      <div class="legend"><span><i style="border-color:var(--red);background:var(--red-soft)"></i>flagged by the detector</span><span><i style="border-color:var(--accent);background:var(--accent-soft)"></i>root cause named by the agent</span><span id="topo-step" class="mono" style="margin-left:auto"></span></div>
-    </div>
-    <div class="pr fade">
-      <div class="top">
-        <div class="title">Diagnosis · test-03 <span>agg-2 · bgp_misconfig</span></div>
-        <div class="meta"><span class="badge" style="background:var(--green)">✓ correct</span><span class="label">RB-03</span><span>Sonnet · 1 tool call · confidence 0.85</span><span>true root: agg-2 (F07)</span></div>
-      </div>
-      <div class="diag">
-        <div class="col">
-          <h3 style="font-size:14px">Evidence pack the agent received</h3>
-          <div class="kv">anomalous_routers:
-  acc-02  access  uplink agg-2  loss_pct ↑
-  acc-10  access  uplink agg-2  loss_pct ↑
-  acc-18  access  uplink agg-2  loss_pct ↑
-symptom_alarms_by_router:
-  acc-02  Uplink packet loss threshold exceeded
-  acc-10  Uplink packet loss threshold exceeded
-  acc-18  Uplink packet loss threshold exceeded
-  agg-2   BGP neighbor down, hold timer expired
-          BGP neighbor session re-established</div>
-        </div>
-        <div class="col">
-          <h3 style="font-size:14px">What the agent submitted</h3>
-          <p style="font-size:14px"><b>Root:</b> agg-2 · <b>type:</b> bgp_misconfig · <b>runbook:</b> RB-03</p>
-          <ul style="margin:0 0 12px;padding-left:18px;font-size:14px;color:var(--ink2)">
-            <li>acc-02, acc-10 and acc-18 all share uplink agg-2 and show loss with uplink packet loss alarms</li>
-            <li>agg-2 logged "BGP neighbor down, hold timer expired" followed by "session re-established"</li>
-            <li>The access routers are victims; agg-2 is the shared parent</li>
-          </ul>
-          <p style="font-size:14px;margin:0"><b>Next step:</b> review the last BGP config commit on agg-2 and the peer's logs; roll back that change after approval, then confirm the session stays up for 10 minutes.</p>
-        </div>
-      </div>
-    </div>
+<section class="screen" id="s5"><div class="inner">
+  <div class="step in"><b>4</b> <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M8 0l6 5-6 5V6H0V4h8z"/></svg> Finding the faults</div>
+  <h2 class="in">Every test fault found, with a fifth of the false alarms.</h2>
+  <div class="pair in">
+    <div><div class="big">0.94</div><div class="lbl">F1, LSTM forecaster · 8/8 found · 1 false alarm</div></div>
+    <div><div class="big" style="color:var(--muted)">0.80</div><div class="lbl">F1, rolling z-score · 8/8 found · 5 false alarms</div></div>
   </div>
-</section>
+  <p class="small in">Thresholds were tuned on 4 development faults; the 8 test faults were scored once. Both detect in about 14 seconds. An int8 version is 2.4× smaller with the same detections, but slower on CPU.</p>
+</div></section>
 
-<section id="pipeline">
-  <div class="wrap">
-    <div class="eyebrow">02 · PIPELINE</div>
-    <h2>A real streaming stack, run locally without Docker.</h2>
-    <p class="narrow">Kafka 4.4 (KRaft) and Cassandra 5.0 run from their release downloads on Java 17 from pixi; Spark comes with PySpark. The detector, text mining and the agent all read from Cassandra.</p>
-    <div class="flow">
-      <div class="card fade"><span class="ic">sim</span><b>Simulator</b><span>30 routers, 5 KPIs every 10 s, 12 faults, 6 decoys, syslog lines</span></div>
-      <div class="card fade"><span class="ic">kafka</span><b>Kafka</b><span>topics kpi + alarms, keyed by router; 65,786 messages</span></div>
-      <div class="card fade"><span class="ic">spark</span><b>Spark Streaming</b><span>parse, 1-minute features, idempotent upserts; peak 3,087 rows/s</span></div>
-      <div class="card fade"><span class="ic">cassandra</span><b>Cassandra</b><span>64,800 KPI rows, 10,800 minute rows, 986 alarms</span></div>
-      <div class="card fade"><span class="ic">pytorch</span><b>LSTM detector</b><span>forecast error → incidents; TF-IDF + KMeans on alarm text</span></div>
-      <div class="card fade"><span class="ic">claude</span><b>RCA agent</b><span>evidence pack + read-only tools + Chroma runbooks → diagnosis</span></div>
-    </div>
+<section class="screen" id="s6"><div class="inner">
+  <div class="step in"><b>5</b> <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M8 0l6 5-6 5V6H0V4h8z"/></svg> Naming the root cause</div>
+  <h2 class="in">Simple rules miss the quiet faults. The agent did not.</h2>
+  <div class="rows in" data-bars>
+    <div class="row me"><span class="name">Agent<small>Claude, read-only tools</small></span><span class="track"><i data-w="1.0"></i></span><span class="val">8/8</span></div>
+    <div class="row"><span class="name">Topology rule<small>upstream-most anomalous router</small></span><span class="track"><i data-w="0.75"></i></span><span class="val">6/8</span></div>
+    <div class="row"><span class="name">Earliest anomaly<small>first router seen</small></span><span class="track"><i data-w="0.625"></i></span><span class="val">5/8</span></div>
   </div>
-</section>
+  <p class="small in">The two faults the rules miss are BGP misconfigurations: the broken router only logs session flaps while its victims lose packets. The agent also dismissed the one noise incident as noise (1/1) and named the fault type in all 9 cases.</p>
+</div></section>
 
-<section id="detect">
-  <div class="wrap">
-    <div class="eyebrow">03 · ANOMALY DETECTION</div>
-    <h2>The forecaster finds every fault with a fifth of the false alarms.</h2>
-    <p class="narrow">The LSTM learns normal behaviour from the first two fault-free hours, one shared model for all routers, each input window centred on its own mean. An anomaly is a forecast error far above normal for two steps or more. Thresholds were tuned on the 4 development faults only.</p>
-    <div class="tablecard fade" style="margin-top:20px">
-      <table>
-        <thead><tr><th>Detector (8 test faults)</th><th>Found</th><th>Incidents</th><th>False</th><th>Precision</th><th>F1</th><th>Delay</th></tr></thead>
-        <tbody>
-          <tr class="best"><td><b>PyTorch LSTM forecaster</b></td><td class="n">8/8</td><td class="n">9</td><td class="n">1</td><td class="n">0.889</td><td class="n"><b>0.941</b></td><td class="n">~14 s</td></tr>
-          <tr><td>Rolling z-score</td><td class="n">8/8</td><td class="n">15</td><td class="n">5</td><td class="n">0.667</td><td class="n">0.8</td><td class="n">~14 s</td></tr>
-          <tr><td>LSTM, int8 dynamic quantization</td><td class="n">8/8</td><td class="n">9</td><td class="n">1</td><td class="n">0.889</td><td class="n">0.941</td><td class="n">~14 s</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="fine">Optimization, honestly: int8 made the model 2.4× smaller (22.8 → 9.5 KB) with identical detections, but scoring was slower on this CPU (0.84 s → 1.41 s). For a 32-unit LSTM, quantization helps size, not speed.</p>
+<section class="screen" id="s7"><div class="inner wide">
+  <div class="step in"><b>6</b> <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M8 0l6 5-6 5V6H0V4h8z"/></svg> Model routing</div>
+  <h2 class="in">The strongest model only where it changes the answer.</h2>
+  <div class="agents in">
+    <div class="agent"><svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect x="5" y="10" width="34" height="28" rx="10" fill="var(--panel)" stroke="var(--ink)" stroke-width="1.6"/><rect x="10" y="15" width="24" height="15" rx="5" fill="var(--ink)"/><rect class="blink" x="15" y="19" width="4" height="6" rx="2" fill="var(--bg)"/><rect class="blink" x="25" y="19" width="4" height="6" rx="2" fill="var(--bg)"/><line x1="22" y1="10" x2="22" y2="5" stroke="var(--ink)" stroke-width="1.6"/><circle cx="22" cy="4" r="2.6" fill="var(--muted)"/></svg><span class="m">haiku · once · $0.0007</span><h3>Labeler</h3><p>Names the 12 alarm clusters as symptom or noise. Checked by code, with Sonnet as a fallback.</p></div>
+    <div class="agent"><svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect x="5" y="10" width="34" height="28" rx="10" fill="var(--panel)" stroke="var(--ink)" stroke-width="1.6"/><rect x="10" y="15" width="24" height="15" rx="5" fill="var(--ink)"/><rect class="blink" x="15" y="19" width="4" height="6" rx="2" fill="var(--bg)" style="animation-delay:-1.5s"/><rect class="blink" x="25" y="19" width="4" height="6" rx="2" fill="var(--bg)" style="animation-delay:-1.5s"/><line x1="22" y1="10" x2="22" y2="5" stroke="var(--ink)" stroke-width="1.6"/><circle cx="22" cy="4" r="2.6" fill="var(--accent)"/></svg><span class="m">sonnet · default</span><h3>Investigator</h3><p>Reads the evidence, calls 1–3 read-only tools and submits the diagnosis. Matched Opus on every test incident at 60% lower cost.</p></div>
+    <div class="agent"><svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect x="5" y="10" width="34" height="28" rx="10" fill="var(--panel)" stroke="var(--ink)" stroke-width="1.6"/><rect x="10" y="15" width="24" height="15" rx="5" fill="var(--ink)"/><rect class="blink" x="15" y="19" width="4" height="6" rx="2" fill="var(--bg)" style="animation-delay:-3s"/><rect class="blink" x="25" y="19" width="4" height="6" rx="2" fill="var(--bg)" style="animation-delay:-3s"/><line x1="22" y1="10" x2="22" y2="5" stroke="var(--ink)" stroke-width="1.6"/><circle cx="22" cy="4" r="2.6" fill="var(--ink)"/></svg><span class="m">opus · escalation</span><h3>Second opinion</h3><p>Only when the investigator disagrees with the topology rule: 2 of 9 test incidents, 9/9 correct, $0.13 vs $0.22 for Opus on all.*</p></div>
   </div>
-</section>
+  <p class="small in">* Chosen after seeing the test results, so that cost is computed from the two test runs' logs, not a separate run. 38% of all prompt tokens were cache reads. Every model call in the project cost $0.48 in total.</p>
+</div></section>
 
-<section id="rca">
-  <div class="wrap">
-    <div class="eyebrow">04 · ROOT CAUSE</div>
-    <h2>The two rules fail exactly where the cause is quiet. The agent does not.</h2>
-    <div class="tablecard fade" style="margin-top:20px">
-      <table>
-        <thead><tr><th>Method (8 test faults + 1 noise incident)</th><th>Root router</th><th>Noise dismissed</th><th>Fault type</th><th>Model cost</th></tr></thead>
-        <tbody>
-          <tr><td>Earliest anomaly</td><td class="n">5/8</td><td class="n">–</td><td class="n">–</td><td class="n">$0</td></tr>
-          <tr><td>Topology rule (upstream-most anomalous router)</td><td class="n">6/8</td><td class="n">–</td><td class="n">–</td><td class="n">$0</td></tr>
-          <tr><td>Agent, Opus decides</td><td class="n"><b>8/8</b></td><td class="n">1/1</td><td class="n">9/9</td><td class="n">$0.223</td></tr>
-          <tr class="best"><td><b>Agent, Sonnet decides</b></td><td class="n"><b>8/8</b></td><td class="n">1/1</td><td class="n">9/9</td><td class="n"><b>$0.089</b></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="two">
-      <div class="card fade"><h3>Where the rules break</h3><p style="font-size:14.5px;margin:0">F07 and F11 are BGP misconfigurations: the root only logs session flaps, while its victims lose packets. The detector flags the victims, so both rules name a victim. The agent gets symptom alarms from every router in the window, sees the shared uplink and reads its BGP lines.</p></div>
-      <div class="card fade"><h3>Where it does not prove much</h3><p style="font-size:14.5px;margin:0">Both models scored 9/9, so this test cannot tell them apart. The network is a clean tree, the alarm text is templated, and there are 8 test faults. Real meshes, partial failures and vendor logs would be harder.</p></div>
-    </div>
+<section class="screen" id="s8"><div class="inner">
+  <div class="step in"><b>7</b> <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M8 0l6 5-6 5V6H0V4h8z"/></svg> Read before you trust it</div>
+  <h2 class="in">What these numbers do not show.</h2>
+  <div class="limits in">
+    <div><span class="k">A</span>The network is simulated: a clean tree of 30 routers, not a real operator mesh.</div>
+    <div><span class="k">B</span>The alarm text is templated, so grouping it was easy (purity 0.999).</div>
+    <div><span class="k">C</span>Opus and Sonnet both scored 9/9: this test cannot say which model is better, only which is cheaper.</div>
+    <div><span class="k">D</span>Eight test faults is a small sample.</div>
   </div>
-</section>
+  <p class="small in">And four things that broke on the way: a detection score that one giant incident could game, a forecaster that mistook the daily traffic curve for a fault, quantization that made the model smaller but slower, and a confidence score too flat to route on. <a href="https://github.com/dheepakkaran/netops-rca-agent/blob/main/FAILURES.md">All eight, with fixes ↗</a></p>
+</div></section>
 
-<section id="routing">
-  <div class="wrap">
-    <div class="eyebrow">05 · MODEL ROUTING</div>
-    <h2>Three models, each where it pays for itself.</h2>
-    <div class="stage fade"><svg id="bots" viewBox="0 0 1000 220" role="img" aria-label="Three agents: a Haiku labeler, a Sonnet investigator and an Opus escalation judge"></svg></div>
-    <div class="feat">
-      <div class="card fade"><span class="ic">haiku · once</span><h3>Labeler</h3><p>Names the 12 alarm clusters and marks each as symptom or noise: one call, $0.0007. Its answer is checked by code; Sonnet would redo it if the check failed.</p></div>
-      <div class="card fade"><span class="ic">sonnet · default</span><h3>Investigator</h3><p>Reads the evidence pack, calls read-only tools (1–3 per incident), submits the diagnosis. Matched Opus on every test incident at 60% lower cost.</p></div>
-      <div class="card fade"><span class="ic">opus · escalation</span><h3>Second opinion</h3><p>Called only when the investigator disagrees with the deterministic topology rule. On test: 2 of 9 incidents, 9/9 correct, $0.130 vs $0.223 for Opus on everything.*</p></div>
-    </div>
-    <p class="fine">* The escalation rule was chosen after seeing the test results (self-reported confidence never dropped below 0.7, so it was useless as a trigger). Its cost is therefore computed from the Sonnet and Opus test ledgers, not from a separate run. The system prompt and tools are identical for every incident, so 37.5% of all prompt tokens were cache reads.</p>
-  </div>
-</section>
+<section class="screen" id="s9"><div class="inner">
+  <div class="step in"><b>8</b> <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M8 0l6 5-6 5V6H0V4h8z"/></svg> Run it yourself</div>
+  <h2 class="in">Java from pixi, Python from uv.</h2>
+<pre class="in">pixi install &amp;&amp; uv sync
+scripts/services.sh up                     <span class="c"># Kafka + Cassandra</span>
+uv run python -m netops.sim                <span class="c"># seeded network</span>
+uv run python -m netops.produce            <span class="c"># → Kafka</span>
+uv run python -m netops.stream             <span class="c"># Spark → Cassandra</span>
+uv run python -m netops.detect             <span class="c"># LSTM vs z-score</span>
+uv run python -m netops.agent test routed  <span class="c"># root cause</span>
+uv run python -m netops.report             <span class="c"># RESULTS.md</span></pre>
+</div></section>
 
-<section id="broke">
-  <div class="wrap">
-    <div class="eyebrow">06 · WHAT BROKE</div>
-    <h2>Eight things went wrong or turned out weaker than hoped.</h2>
-    <div class="fails">
-      <div class="card fade"><h3>My metric could be gamed</h3><p>The first LSTM run merged 4 faults into one giant incident, and my scorer counted it as finding all 4. Now a fault counts only if an incident starts inside it.</p></div>
-      <div class="card fade"><h3>The daily curve looked like a fault</h3><p>Trained on 2 hours, the forecaster flagged the normal traffic drift later in the day. Centring each window on its own mean fixed it.</p></div>
-      <div class="card fade"><h3>Quantization: smaller, not faster</h3><p>int8 cut the model 2.4× with the same detections but scored slower on CPU. Reported as is.</p></div>
-      <div class="card fade"><h3>Confidence was useless for routing</h3><p>The model was always 0.70–0.92 sure. Escalation now triggers on disagreement with a deterministic rule instead.</p></div>
-    </div>
-    <p class="fade" style="margin-top:20px"><a href="https://github.com/dheepakkaran/netops-rca-agent/blob/main/FAILURES.md">All eight →</a></p>
-  </div>
-</section>
-
-<section id="run">
-  <div class="wrap">
-    <div class="eyebrow">07 · RUN IT</div>
-    <h2>Java from pixi, Python from uv, no Docker.</h2>
-    <pre class="cmd fade">pixi install &amp;&amp; uv sync
-scripts/services.sh up                 <span class="c"># Kafka (KRaft) + Cassandra</span>
-uv run python -m netops.sim            <span class="c"># seeded network, faults, alarms</span>
-uv run python -m netops.produce        <span class="c"># → Kafka</span>
-uv run python -m netops.stream         <span class="c"># Spark: Kafka → Cassandra</span>
-uv run python -m netops.detect         <span class="c"># LSTM vs z-score, int8, incidents</span>
-uv run python -m netops.textmine       <span class="c"># alarm clusters</span>
-uv run python -m netops.agent test routed   <span class="c"># ANTHROPIC_API_KEY in .env</span>
-uv run python -m netops.report         <span class="c"># RESULTS.md from results/</span></pre>
-  </div>
-</section>
-
-<footer><div class="wrap">Dheepak Karan · Independent project, November 2026 · Synthetic network and alarms; not real operator data and not affiliated with any network vendor, Anthropic or GitHub. Claude is a trademark of Anthropic. The agent characters are original drawings made for this page.</div></footer>
+<section class="screen" id="s10"><div class="inner">
+  <h2 class="in">Thanks for reading.</h2>
+  <p class="lead in">The code, every result file and the log of every model call are in the repository.</p>
+  <div class="ok in" style="flex-wrap:wrap"><a class="btn" href="https://github.com/dheepakkaran/netops-rca-agent">View on GitHub ↗</a><a class="btn ghost" href="https://github.com/dheepakkaran/netops-rca-agent/blob/main/RESULTS.md">All results</a><button class="btn ghost" data-top>Back to start</button></div>
+  <p class="foot in">Independent project by Dheepak Karan, November 2026. Synthetic network and alarms; not real operator data. Not affiliated with any network vendor or with Anthropic; Claude is a trademark of Anthropic. The agent characters are original.</p>
+</div></section>
+</main>
 
 <script>
 const NS = "http://www.w3.org/2000/svg", reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const el = (t, a, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); p && p.appendChild(e); return e; };
 const txt = (p, a, s) => { const t = el("text", a, p); t.textContent = s; return t; };
+const screens = [...document.querySelectorAll(".screen")];
+const bar = document.getElementById("bar"), counter = document.getElementById("counter");
 
-/* terminal: real test-run lines (results/rca_test_sonnet.json) */
+/* navigation: progress, counter, arrows, keys */
+const current = () => { let k = 0; screens.forEach((s, i) => { if (s.getBoundingClientRect().top < innerHeight * .45) k = i; }); return k; };
+const go = i => screens[Math.max(0, Math.min(screens.length - 1, i))].scrollIntoView({behavior: reduce ? "auto" : "smooth"});
+const sync = () => {
+  const k = current(); counter.textContent = `${k + 1} / ${screens.length}`;
+  const max = document.documentElement.scrollHeight - innerHeight; bar.style.width = (max > 0 ? 100 * scrollY / max : 0) + "%";
+};
+addEventListener("scroll", sync, {passive: true}); sync();
+document.getElementById("up").onclick = () => go(current() - 1);
+document.getElementById("down").onclick = () => go(current() + 1);
+document.querySelectorAll("[data-next]").forEach(b => b.onclick = () => go(current() + 1));
+document.querySelectorAll("[data-top]").forEach(b => b.onclick = () => go(0));
+addEventListener("keydown", e => {
+  if (e.target.closest("button,a,input,textarea")) { if (e.key !== "Enter" || !e.target.matches(".btn[data-next]")) return; }
+  if (["ArrowDown", "PageDown", "Enter"].includes(e.key)) { e.preventDefault(); go(current() + 1); }
+  if (["ArrowUp", "PageUp"].includes(e.key)) { e.preventDefault(); go(current() - 1); }
+  if (current() === 1 && /^[abcd]$/i.test(e.key)) document.querySelector(`.choice[data-k="${e.key.toLowerCase()}"]`).click();
+});
+
+/* reveal on entry */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return; e.target.classList.add("seen");
+  e.target.querySelectorAll("[data-w]").forEach(i => i.style.width = (100 * +i.dataset.w) + "%");
+  if (e.target.id === "s3") startTopo();
+}), {threshold: .35});
+screens.forEach(s => io.observe(s));
+
+/* quiz */
 (() => {
-  const pre = document.getElementById("termbody");
-  const L = [["$ python -m netops.agent test sonnet", ""], ["9 incidents · prompt frozen at 755e886", "t-muted"]].concat(
-    [["  test-01  true=acc-05  \u2192 acc-05  link_down       \u2713", "t-ok"], ["  test-02  true=acc-13  \u2192 acc-13  link_down       \u2713", "t-ok"], ["  test-03  true=agg-2   \u2192 agg-2   bgp_misconfig   \u2713", "t-ok"], ["  test-04  true=core-2  \u2192 core-2  cpu_overload    \u2713", "t-ok"], ["  test-05  true=agg-6   \u2192 agg-6   link_down       \u2713", "t-ok"], ["  test-06  true=noise   \u2192 none    transient_noise \u2713", "t-ok"], ["  test-07  true=agg-3   \u2192 agg-3   cpu_overload    \u2713", "t-ok"], ["  test-08  true=agg-5   \u2192 agg-5   bgp_misconfig   \u2713", "t-ok"], ["  test-09  true=agg-8   \u2192 agg-8   bgp_misconfig   \u2713", "t-ok"]],
-    [["  root 8/8 · noise 1/1 · type 9/9 · cost $0.089", "t-pr"]]);
-  const esc = s => s.replace(/[&<>]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;"}[c]));
-  if (reduce) { pre.innerHTML = L.map(([s, c]) => `<span class="${c}">${esc(s)}</span>`).join("\n"); return; }
-  let i = 0;
-  const step = () => {
-    if (i >= L.length) { pre.insertAdjacentHTML("beforeend", '\n<span class="cursor"></span>'); setTimeout(() => { pre.textContent = ""; i = 0; step(); }, 5200); return; }
-    const [s, c] = L[i++];
-    if (i > 1) pre.appendChild(document.createTextNode("\n"));
-    const span = document.createElement("span"); span.className = c; pre.appendChild(span);
-    let j = 0; const first = i === 1;
-    const t = () => { j += first ? 1 : 5; span.textContent = s.slice(0, j); if (j < s.length) setTimeout(t, first ? 38 : 14); else setTimeout(step, first ? 450 : 330); };
-    t();
-  };
-  step();
+  const out = document.getElementById("quiz-out"), opts = [...document.querySelectorAll(".choice")];
+  const msg = {
+    a: "acc-02 is what the “earliest anomaly” rule picks. It is a victim.",
+    b: "acc-10 is losing packets, but so are its two neighbours. It is a victim.",
+    c: "acc-18 is one of three victims.",
+    d: "Right. agg-2 looked calm in every metric, but its log shows BGP sessions going down. The topology rule and the earliest-anomaly rule both missed it; the agent named it."};
+  opts.forEach(b => b.onclick = () => {
+    opts.forEach(o => o.classList.remove("right", "wrong", "dim"));
+    opts.forEach(o => o.classList.add(o.dataset.k === "d" ? "right" : (o === b ? "wrong" : "dim")));
+    out.textContent = msg[b.dataset.k] + (b.dataset.k !== "d" ? " The answer is D, agg-2: their shared uplink, whose log shows BGP sessions going down." : "");
+    out.classList.add("on");
+    setTimeout(() => go(2), reduce ? 0 : 2600);
+  });
 })();
 
-/* topology replay of test-03 */
-(() => {
-  const s = document.getElementById("topo"), lab = document.getElementById("topo-step");
+/* topology replay of test incident 3 */
+let topoStarted = false;
+function startTopo() {
+  if (topoStarted) return; topoStarted = true;
+  const s = document.getElementById("topo"), cap = document.getElementById("topo-cap");
   const core = ["core-1", "core-2"], agg = [1,2,3,4,5,6,7,8].map(i => "agg-" + i), acc = [...Array(20)].map((_, i) => "acc-" + String(i + 1).padStart(2, "0"));
   const pos = {};
-  core.forEach((n, i) => pos[n] = [340 + i * 320, 40]);
-  agg.forEach((n, i) => pos[n] = [80 + i * 120, 140]);
-  acc.forEach((n, i) => pos[n] = [40 + i * 48.4, 250]);
+  core.forEach((n, i) => pos[n] = [340 + i * 320, 40]); agg.forEach((n, i) => pos[n] = [80 + i * 120, 140]); acc.forEach((n, i) => pos[n] = [40 + i * 48.4, 250]);
   const parent = n => n.startsWith("agg") ? core[(+n.split("-")[1] - 1) % 2] : n.startsWith("acc") ? agg[(+n.split("-")[1] - 1) % 8] : null;
-  txt(s, {x: 0, y: 44, class: "tier"}, "core"); txt(s, {x: 0, y: 112, class: "tier"}, "aggregation"); txt(s, {x: 0, y: 222, class: "tier"}, "access");
-  const lines = {};
+  txt(s, {x: 0, y: 44, class: "tier"}, "CORE"); txt(s, {x: 0, y: 112, class: "tier"}, "AGGREGATION"); txt(s, {x: 0, y: 222, class: "tier"}, "ACCESS");
+  const lines = {}, nodes = {};
   [...agg, ...acc].forEach(n => { const [x1, y1] = pos[n], [x2, y2] = pos[parent(n)]; lines[n] = el("line", {x1, y1, x2, y2, class: "ln"}, s); });
-  const nodes = {};
   [...core, ...agg, ...acc].forEach(n => {
-    const [x, y] = pos[n], r = n.startsWith("core") ? 15 : n.startsWith("agg") ? 12 : 9;
+    const [x, y] = pos[n], r = n.startsWith("core") ? 13 : n.startsWith("agg") ? 10 : 7.5;
     nodes[n] = el("circle", {cx: x, cy: y, r, class: "nd"}, s);
-    txt(s, {x, y: y + r + 13, "text-anchor": "middle", class: "tl"}, n.replace("acc-", "").replace("agg-", "agg ").replace("core-", "core "));
+    txt(s, {x, y: y + r + 12, "text-anchor": "middle", class: "tl"}, n.replace("acc-", "").replace("agg-", "agg ").replace("core-", "core "));
   });
-  const bub = el("g", {class: "bubble", transform: "translate(200,72)"}, s);
-  el("rect", {x: 0, y: 0, width: 228, height: 40, rx: 8, fill: "var(--surface)", stroke: "var(--accent)", "stroke-width": 1.5}, bub);
-  txt(bub, {x: 10, y: 17, style: "font:600 10.5px 'JetBrains Mono',monospace;fill:var(--accent)"}, "agg-2 · %BGP-5-ADJCHANGE");
-  txt(bub, {x: 10, y: 31, style: "font:500 10px 'JetBrains Mono',monospace;fill:var(--muted)"}, "neighbor Down - hold timer expired");
+  const bub = el("g", {class: "bubble", transform: "translate(196,70)"}, s);
+  el("rect", {x: 0, y: 0, width: 232, height: 40, rx: 6, fill: "var(--panel)", stroke: "var(--ink)", "stroke-width": 1}, bub);
+  txt(bub, {x: 10, y: 17, style: "font:500 10.5px 'JetBrains Mono',monospace;fill:var(--ink)"}, "agg-2 · %BGP-5-ADJCHANGE");
+  txt(bub, {x: 10, y: 31, style: "font:400 10px 'JetBrains Mono',monospace;fill:var(--muted)"}, "neighbor Down - hold timer expired");
   const victims = ["acc-02", "acc-10", "acc-18"];
   const reset = () => { Object.values(nodes).forEach(n => n.classList.remove("victim", "root")); Object.values(lines).forEach(l => l.classList.remove("hot")); bub.classList.remove("on"); };
   const steps = [
-    [() => { reset(); }, "t+0 s · normal"],
-    [() => victims.forEach(v => nodes[v].classList.add("victim")), "t+10 s · detector flags 3 access routers (loss)"],
-    [() => victims.forEach(v => lines[v].classList.add("hot")), "agent: all three share uplink agg-2"],
-    [() => bub.classList.add("on"), "agent: alarms(agg-2) → BGP sessions flapping"],
-    [() => nodes["agg-2"].classList.add("root"), "diagnosis: agg-2 · bgp_misconfig · RB-03"]];
-  if (reduce) { steps.slice(1).forEach(([f]) => f()); lab.textContent = steps[4][1]; return; }
+    [reset, "0 s · normal"],
+    [() => victims.forEach(v => nodes[v].classList.add("victim")), "+10 s · detector flags acc-02, acc-10, acc-18 (packet loss)"],
+    [() => victims.forEach(v => lines[v].classList.add("hot")), "agent · neighbors() → all three share uplink agg-2"],
+    [() => bub.classList.add("on"), "agent · alarms(agg-2) → BGP sessions flapping"],
+    [() => nodes["agg-2"].classList.add("root"), "diagnosis · agg-2 · bgp_misconfig · runbook RB-03 · correct"]];
+  if (reduce) { steps.slice(1).forEach(([f]) => f()); cap.textContent = steps[4][1]; return; }
   let k = 0;
-  const tick = () => { const [f, t] = steps[k]; f(); lab.textContent = t; k = (k + 1) % steps.length; setTimeout(tick, k === 0 ? 3200 : 1700); };
+  const tick = () => { const [f, t] = steps[k]; f(); cap.textContent = t; k = (k + 1) % steps.length; setTimeout(tick, k === 0 ? 3400 : 1800); };
   tick();
-})();
-
-/* agent characters (original): antenna color = model tier */
-(() => {
-  const s = document.getElementById("bots");
-  const bots = [["Labeler", "haiku · once", "var(--haiku)", "≡"], ["Investigator", "sonnet · default", "var(--sonnet)", "?"], ["Second opinion", "opus · escalation", "var(--opus)", "◇"]];
-  const xs = [200, 500, 800], groups = [];
-  el("line", {x1: 140, x2: 860, y1: 196, y2: 196, class: "rail"}, s);
-  bots.forEach(([name, model, col, sym], i) => {
-    const g = el("g", {class: "bot b" + (i + 1), transform: `translate(${xs[i] - 46},30)`}, s);
-    const bob = el("g", {class: "bob"}, g);
-    el("rect", {class: "glow", x: -10, y: -26, width: 112, height: 124, rx: 30, fill: "var(--accent-soft)"}, bob);
-    el("line", {class: "ant", x1: 46, y1: 6, x2: 46, y2: -10}, bob);
-    el("circle", {cx: 46, cy: -13, r: 6.5, fill: col}, bob);
-    el("rect", {class: "body", x: 0, y: 6, width: 92, height: 80, rx: 24}, bob);
-    el("rect", {class: "face", x: 12, y: 18, width: 68, height: 42, rx: 13}, bob);
-    el("rect", {class: "eye", x: 28, y: 30, width: 9, height: 13, rx: 4.5}, bob);
-    el("rect", {class: "eye", x: 55, y: 30, width: 9, height: 13, rx: 4.5}, bob);
-    el("path", {class: "mouth", d: "M40 51 Q46 55 52 51"}, bob);
-    txt(bob, {x: 46, y: 78, "text-anchor": "middle", style: "font:600 11px 'JetBrains Mono',monospace;fill:var(--muted)"}, sym);
-    el("rect", {class: "feet", x: 22, y: 90, width: 16, height: 6, rx: 3}, g);
-    el("rect", {class: "feet", x: 54, y: 90, width: 16, height: 6, rx: 3}, g);
-    txt(s, {x: xs[i], y: 154, "text-anchor": "middle", class: "lab"}, name);
-    txt(s, {x: xs[i], y: 172, "text-anchor": "middle", class: "sub"}, model);
-    groups.push(g);
-  });
-  if (reduce) { groups[1].classList.add("active"); return; }
-  const seq = [1, 1, 1, 2, 1, 1, 0]; let k = 0;
-  const tick = () => { groups.forEach(g => g.classList.remove("active")); groups[seq[k]].classList.add("active"); k = (k + 1) % seq.length; setTimeout(tick, 1300); };
-  tick();
-})();
-
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold: .12});
-document.querySelectorAll(".fade").forEach(e => io.observe(e));
-const tabs = [...document.querySelectorAll(".tabs a")], secs = tabs.map(a => document.querySelector(a.getAttribute("href")));
-addEventListener("scroll", () => { let cur = 0; secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < 160) cur = i; }); tabs.forEach((a, i) => a.classList.toggle("on", i === cur)); }, {passive: true});
+}
 </script>
 </body>
 </html>
