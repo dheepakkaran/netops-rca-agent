@@ -1,5 +1,9 @@
 # netops-rca-agent
 
+<a href="https://dheepakkaran.github.io/netops-rca-agent/#overview"><img src="docs/media/overview.webp" alt="35-second overview: routers report their health, the detector flags what is not normal, the agent finds the broken router and suggests a fix" width="100%"></a>
+
+<sub>35-second overview (silent preview). <a href="https://dheepakkaran.github.io/netops-rca-agent/#overview">Watch it with sound on the project page →</a> The network in it is simulated.</sub>
+
 Network telemetry → anomaly detection → an AI agent that names the root-cause router. A seeded simulator streams router KPIs and syslog alarms through **Kafka → Spark Structured Streaming → Cassandra**; a **PyTorch LSTM forecaster** flags anomalies and groups them into incidents; **TF-IDF + KMeans** mines the alarm text; and a **Claude agent** with read-only tools (topology, KPI windows, alarm lines, **Chroma** runbook search) picks the root cause, the fault type and the runbook. It recommends; it never changes the network.
 
 **Project page:** [dheepakkaran.github.io/netops-rca-agent](https://dheepakkaran.github.io/netops-rca-agent/) · **All numbers:** [RESULTS.md](RESULTS.md) · **What broke:** [FAILURES.md](FAILURES.md)

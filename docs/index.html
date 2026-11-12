@@ -129,6 +129,9 @@ pre .c{color:var(--muted)}
 .screen.seen .in{opacity:1;transform:none}
 .screen.seen .in:nth-child(2){transition-delay:.07s} .screen.seen .in:nth-child(3){transition-delay:.14s} .screen.seen .in:nth-child(4){transition-delay:.21s} .screen.seen .in:nth-child(5){transition-delay:.28s}
 
+/* overview video */
+.overview{margin:0}.overview video{display:block;width:100%;aspect-ratio:16/9;background:#131313;border:1px solid var(--line);border-radius:8px}.overview figcaption{font-size:14px;color:var(--muted);margin-top:12px;line-height:1.5}
+
 @media (max-width:760px){
   body{font-size:17px}
   .screen{padding:84px 18px 92px}
@@ -145,7 +148,7 @@ pre .c{color:var(--muted)}
 <body>
 <div class="progress" aria-hidden="true"><i id="bar"></i></div>
 <a class="brand" href="#s1">netops-rca-agent <span>· a project by Dheepak Karan</span></a>
-<nav class="toplinks" aria-label="Links"><a class="hide" href="https://github.com/dheepakkaran/netops-rca-agent/blob/main/RESULTS.md">Results</a><a class="hide" href="https://github.com/dheepakkaran/netops-rca-agent/blob/main/FAILURES.md">What broke</a><a href="https://github.com/dheepakkaran/netops-rca-agent">GitHub ↗</a></nav>
+<nav class="toplinks" aria-label="Links"><a href="#overview">Video</a><a class="hide" href="https://github.com/dheepakkaran/netops-rca-agent/blob/main/RESULTS.md">Results</a><a class="hide" href="https://github.com/dheepakkaran/netops-rca-agent/blob/main/FAILURES.md">What broke</a><a href="https://github.com/dheepakkaran/netops-rca-agent">GitHub ↗</a></nav>
 <div class="counter" id="counter" aria-hidden="true">1 / 10</div>
 <div class="nav"><button id="up" aria-label="Previous screen"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9l5-5 5 5"/></svg></button><button id="down" aria-label="Next screen"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5l5 5 5-5"/></svg></button></div>
 
@@ -155,6 +158,13 @@ pre .c{color:var(--muted)}
   <p class="lead in">An agent that reads network telemetry, finds what is not normal and names the router that caused it, or says it was noise. It recommends. It never touches the network.</p>
   <div class="ok in"><button class="btn" data-next>Start <span aria-hidden="true">→</span></button><span class="hint">press <b>Enter ↵</b></span></div>
   <p class="small in">Kafka · Spark · Cassandra · PyTorch · Claude API · synthetic network of 30 routers</p>
+</div></section>
+
+<section class="screen" id="s-video"><div class="inner wide">
+  <figure class="overview" id="overview">
+<video controls playsinline preload="metadata" poster="media/overview.jpg"><source src="media/overview.mp4" type="video/mp4">Your browser cannot play this video. <a href="media/overview.mp4">Download it</a>.</video>
+<figcaption>The whole project in 35 seconds, with sound. The 30-router network, its readings and its alarms are simulated; the 8 test faults were scored once.</figcaption>
+  </figure>
 </div></section>
 
 <section class="screen" id="s2"><div class="inner">
@@ -278,7 +288,7 @@ addEventListener("keydown", e => {
   if (e.target.closest("button,a,input,textarea")) { if (e.key !== "Enter" || !e.target.matches(".btn[data-next]")) return; }
   if (["ArrowDown", "PageDown", "Enter"].includes(e.key)) { e.preventDefault(); go(current() + 1); }
   if (["ArrowUp", "PageUp"].includes(e.key)) { e.preventDefault(); go(current() - 1); }
-  if (current() === 1 && /^[abcd]$/i.test(e.key)) document.querySelector(`.choice[data-k="${e.key.toLowerCase()}"]`).click();
+  if (current() === 2 && /^[abcd]$/i.test(e.key)) document.querySelector(`.choice[data-k="${e.key.toLowerCase()}"]`).click();
 });
 
 /* reveal on entry */
@@ -302,7 +312,7 @@ screens.forEach(s => io.observe(s));
     opts.forEach(o => o.classList.add(o.dataset.k === "d" ? "right" : (o === b ? "wrong" : "dim")));
     out.textContent = msg[b.dataset.k] + (b.dataset.k !== "d" ? " The answer is D, agg-2: their shared uplink, whose log shows BGP sessions going down." : "");
     out.classList.add("on");
-    setTimeout(() => go(2), reduce ? 0 : 2600);
+    setTimeout(() => go(3), reduce ? 0 : 2600);
   });
 })();
 
